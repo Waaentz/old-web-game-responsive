@@ -36,6 +36,7 @@ var onscreenViewport = {
 	left: 0,
 	top: 0
 };
+var GAME_FILL_BG_URL = "graphic/grass-base.png";
 
 var applyMapViewport = function(){
 	var mapStyle = {
@@ -110,11 +111,12 @@ var applyBodyViewport = function(){
 	var bgWidth = mobile.screen.width * fillScale;
 	var bgHeight = mobile.screen.height * fillScale;
 	var bgStyle = {
-		backgroundImage: "url(../graphic/screens/loading/background.png)",
+		backgroundImage: "url(graphic/screens/loading/background.png)",
 		backgroundRepeat: "repeat",
 		backgroundPosition: "center center",
 		backgroundSize: bgWidth + "px " + bgHeight + "px"
 	};
+	$("html").css("--game-fill-image", "url(" + GAME_FILL_BG_URL + ")");
 
 
 	if (mapViewport.isExtreme) {

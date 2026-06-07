@@ -7,6 +7,7 @@
 	--game-base-height: 960px;
 	--game-fill-width: 640px;
 	--game-fill-height: 960px;
+	--game-fill-image: url(../graphic/grass-base.png);
 	--map-scale: 1;
 	--map-left: 0px;
 	--map-top: 0px;
@@ -48,6 +49,18 @@ body{
 	background-size: var(--game-fill-width) var(--game-fill-height);
 	overflow: hidden;
 	touch-action: none;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image: var(--game-fill-image);
+	background-repeat: repeat;
+	background-position: center center;
+	background-size: var(--game-fill-width) var(--game-fill-height);
 }
 
 
