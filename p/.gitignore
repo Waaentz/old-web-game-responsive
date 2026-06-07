@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+__MACOSX/
+
+# Editor/OS files
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Optional
+node_modules/

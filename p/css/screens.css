@@ -1,0 +1,2856 @@
+@font-face {
+  font-family: Kameron-Bold;
+  src: url("../fonts/Kameron-Bold.ttf");
+}
+
+@font-face {
+  font-family: Kameron-Regular;
+  src: url("../fonts/Kameron-Regular.ttf");
+}
+
+@font-face {
+    font-family: Margarine-Regular;
+    src: url("../fonts/Margarine-Regular.ttf");
+}
+
+intro{
+	z-index: 2000001;
+	display:block;
+	position:absolute;
+	overflow: hidden;
+	width: 640px;
+	height: 960px;
+	background:#333 url('../graphic/screens/loading/background.png');
+	opacity:1;
+	-webkit-transition: opacity 0.5s ease-in;
+	transform-origin: 0 0;
+	transform: scale(var(--intro-scale));
+	-webkit-transform: scale(var(--intro-scale));
+	left: var(--intro-left);
+	top: var(--intro-top);
+}
+
+intro.remove{
+    opacity:0;
+}
+
+screen{
+	background: black no-repeat;
+	color: white;
+	width: 640px;
+	height: 960px;
+	position: absolute;
+	top: var(--screen-top);
+	left: var(--screen-left);
+	font-size: 40px;
+	font-family: Kameron-Regular;
+	text-transform: uppercase;
+	z-index: 2000000;
+	display:block;
+	overflow: hidden;
+}
+
+screen *{
+	position: absolute;
+	background-repeat: no-repeat;
+	display: block;
+}
+
+
+screen br{
+	position: static;
+	display: block;
+}
+
+screen text{
+	text-transform: none;
+	letter-spacing: -3px;
+}
+
+imgholder{
+	position: absolute !important;
+	top: 10px;
+	left: 10px;
+	width: 1px;
+	height: 1px;
+	z-index: 1;
+	overflow: hidden;
+}
+
+imgholder img{
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+
+}
+
+screen btn,
+game btn{
+	border-radius: 200px;
+	background: rgba(0, 0, 0, 0.8);
+	padding: 30px 90px;
+	padding: 17px 46px;
+	font-family: Kameron-Bold;
+	position: absolute;
+	display: block;
+	text-align: center;
+}
+
+screen btn:hover,
+game btn:hover{
+	background: rgba(0, 0, 0, 0.4);
+}
+
+
+screen input{
+	padding: 0px 46px;
+	background: url(../graphic/screens/universal/input.png) no-repeat;
+	border: none;
+	width: 467px;
+	height: 132px;
+	font-family: Arial;
+	font-size: 36px;
+	color: #ccc;
+	text-align: center;
+}
+
+screen input.withText{
+	color: #000;
+}
+
+
+
+
+
+
+/*FAKE LOADING SCREEN ######################################################################################################################################*/
+screen.loading{
+	background: url(../graphic/screens/loading/background.png);
+}
+
+
+
+
+/*INTRO ######################################################################################################################################*/
+screen.intro{
+	background: url(../graphic/screens/overview/background.png) left -282px;
+	-webkit-animation: introBackgroundScroll 1.5s ease-in-out;
+}
+
+screen.intro poonie{
+	background-image: url(../graphic/screens/overview/poonie.png);
+	width: 229px;
+	height: 194px;
+	margin: 242px 0 0 219px;
+	z-index: 2;
+	-webkit-animation: introPoonieScroll 1.5s ease-in-out;
+}
+
+screen.intro shadow{
+	background-image: url(../graphic/screens/overview/poonie-shadow.png);
+	width: 199px;
+	height: 56px;
+	margin: 390px 0 0 233px;
+	z-index: 1;
+	-webkit-animation: introPoonieShadowScroll 1.5s ease-in-out;
+}
+
+screen.intro poo{
+	background-image: url(../graphic/screens/overview/poo.png);
+	width: 197px;
+	height: 250px;
+	margin: -139px 0 0 237px;
+	opacity: 0;
+	z-index: 2;
+	-webkit-animation: introPooScroll 1.5s ease-in-out;
+}
+
+screen.intro loading{
+	background-image: url(../graphic/screens/overview/loading.png);
+	width: 299px;
+	height: 80px;
+	margin: 867px 0 0 186px;
+	opacity: 0;
+	-webkit-animation: fadeout 0.4s linear;
+}
+
+
+screen.intro btn.play{
+	margin: 444px 0 0 155px;
+	font-size: 100px;
+	-webkit-animation: introBtn 2.0s linear;
+}
+
+screen.intro btn.editor{
+	margin: 625px 0 0 150px;
+	-webkit-animation: introBtnII 2.2s linear;
+}
+
+
+@-webkit-keyframes fadeout {
+	0%	{opacity: 1}
+	100%{opacity: 0}
+}
+
+@-webkit-keyframes introBackgroundScroll 
+{
+	0%{background-position: left -108px}
+	20%{background-position: left -108px}
+	100%{background-position: left -282px}
+}
+
+@-webkit-keyframes introPoonieScroll {
+	0%	{margin-top: 416px}
+	20%	{margin-top: 416px}
+	100%{margin-top: 242px}
+}
+
+@-webkit-keyframes introPoonieShadowScroll {
+	0%	{margin-top: 564px}
+	20%	{margin-top: 564px}
+	100%{margin-top: 390px}
+}
+
+@-webkit-keyframes introPooScroll {
+	0%	{margin-top: 37px;opacity: 1;}
+	20%	{margin-top: 37px;opacity: 1;}
+	70%	{opacity: 1;}
+	100%{margin-top:-139px; opacity: 0;}
+}
+
+@-webkit-keyframes introBtn {
+	0%	{opacity: 0}
+	70%	{opacity: 0}
+	100%{opacity: 1}
+}
+
+@-webkit-keyframes introBtnII {
+	0%	{opacity: 0}
+	70%	{opacity: 0}
+	100%{opacity: 0.5}
+}
+
+
+
+
+
+
+/*Overview ######################################################################################################################################*/
+.old screen.overview *{
+	-webkit-animation: none !important
+}
+
+screen.overview{
+	background: url(../graphic/screens/overview/background.png) left -282px;
+}
+
+screen.overview poonie{
+	background-image: url(../graphic/screens/overview/poonie.png);
+	width: 229px;
+	height: 194px;
+	margin: 242px 0 0 219px;
+	z-index: 12;
+}
+
+screen.overview poonie.blink{
+	background-image: url(../graphic/screens/overview/poonie-blink.png);
+}
+
+
+screen.overview poonie.right{
+	background-image: url(../graphic/screens/overview/poonie-look-right.png);
+}
+
+screen.overview poonie.left{
+	background-image: url(../graphic/screens/overview/poonie-look-left.png);
+}
+
+screen.overview poonie.up{
+	background-image: url(../graphic/screens/overview/poonie-look-left.png);
+}
+
+screen.overview poonie.down{
+	background-image: url(../graphic/screens/overview/poonie-look-down.png);
+}
+
+
+
+screen.overview shadow{
+	background-image: url(../graphic/screens/overview/poonie-shadow.png);
+	width: 199px;
+	height: 56px;
+	margin: 390px 0 0 233px;
+	z-index: 11;
+}
+
+
+screen.overview btn.play{
+	margin: 444px 0 0 155px;
+	font-size: 100px;
+	z-index: 10;
+}
+
+screen.overview btn.editor{
+	margin: 625px 0 0 150px;
+	opacity: 0.5;
+	z-index: 10;
+}
+
+body.fbIn screen.overview btn.editor,
+body.test screen.overview btn.editor{
+	opacity: 1
+}
+
+body.fbIn screen.overview btn.editor counter,
+body.test screen.overview btn.editor counter{
+	position: absolute;
+	font-size: 35px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+	border: 4px solid white; 
+	border-radius: 100px;
+	margin: -90px 0 0 280px; 
+	width: 45px;
+	height: 44px;
+	padding-top: 1px;
+	display: block;
+}
+
+body screen.overview btn.editor counter{
+	display: none
+}
+screen.overview audiobtn{
+	background-image: url(../graphic/screens/universal/icon-sound-on.png);
+	width: 57px;
+	height: 57px;
+	margin: 53px 0 0 15px;
+	z-index: 19;
+	display: block;
+	position: absolute;
+}
+
+screen.overview audiobtn:hover{
+	opacity: 0.5
+}
+
+screen.overview audiobtn.off{
+	background-image: url(../graphic/screens/universal/icon-sound-off.png) !important;
+}
+
+
+body screen.overview fblogin{
+	background: url(../graphic/screens/universal/facebook-login.png) no-repeat;
+	width: 484px;
+	height: 87px;
+	margin:850px 0 0 80px;
+	display: block;
+	z-index: 10;
+}
+
+body.fbIn screen.overview fblogin{
+	display: none;
+}
+
+
+body screen.overview fblogout{
+	display: none
+}
+
+body.fbIn screen.overview fblogout{
+	background: url(../graphic/screens/universal/facebook-logout.png) no-repeat;
+	width: 484px;
+	height: 87px;
+	margin:850px 0 0 80px;
+	display: block;
+	z-index: 10;
+}
+
+screen.overview bottomwater{
+	background: url(../graphic/screens/overview/deepwater.png) no-repeat;
+	width: 640px;
+	height: 386px;
+	margin:573px 0 0 0px;
+	display: block;
+	z-index: 5;
+	-webkit-animation: deepwater 10.5s infinite;
+}
+
+screen.overview topwater{
+	background: url(../graphic/screens/overview/water.png) no-repeat;
+	width: 640px;
+	height: 333px;
+	margin:643px 0 0 0px;
+	display: block;
+	z-index: 6;
+}
+
+screen.overview groundbase{
+	background: url(../graphic/screens/overview/base.png) no-repeat;
+	width: 640px;
+	height: 760px;
+	margin:21px 0 0 0px;
+	display: block;
+	z-index: 4;
+	
+}
+
+screen.overview shines{
+	background: url(../graphic/screens/overview/shines.png) no-repeat;
+	width: 561px;
+	height: 213px;
+	margin:572px 0 0 26px;
+	display: block;
+	z-index: 8;
+}
+
+screen.overview wood{
+	background: url(../graphic/screens/overview/wood.png) no-repeat;
+	width: 193px;
+	height: 171px;
+	margin:626px 0 0 -4px;
+	display: block;
+	z-index: 9;
+	-webkit-animation: wood 10.5s infinite;
+}
+
+screen.overview wave{
+	background: url(../graphic/screens/overview/waves.png) no-repeat;
+	width: 640px;
+	height: 132px;
+	margin:649px 0 0 0px;
+	display: block;
+	z-index: 8;
+	-webkit-animation: waves 10.5s infinite;
+}
+
+screen.overview grasstwo{
+	background: url(../graphic/screens/overview/grass2.png) no-repeat;
+	width: 42px;
+	height: 26px;
+	margin:482px 0 0 96px;
+	display: block;
+	z-index: 8;
+	-webkit-animation: grasstwo 3.5s infinite;
+}
+
+screen.overview grasstree{
+	background: url(../graphic/screens/overview/grass3.png) no-repeat;
+	width: 33px;
+	height: 36px;
+	margin:434px 0 0 555px;
+	display: block;
+	z-index: 8;
+	-webkit-animation: grass 3.5s infinite;
+}
+
+
+
+@-webkit-keyframes deepwater {
+	0%	{margin-top:573px}
+	50%	{margin-top:529px}
+	100%{margin-top:573px}
+}
+
+@-webkit-keyframes wood {
+	0%	{margin-top:646px; -webkit-transform: rotate(-3deg)}
+	50%	{margin-top:576px; -webkit-transform: rotate(3deg)}
+	100%{margin-top:646px; -webkit-transform: rotate(-3deg)}
+}
+
+@-webkit-keyframes waves {
+	0%	{margin-top:759px; opacity: 0.5}
+	50%	{margin-top:620px; opacity: 1}
+	100%{margin-top:759px; opacity: 0.5}
+}
+
+@-webkit-keyframes grass {
+	0%	{-webkit-transform: rotate(-3deg)}
+	50%	{-webkit-transform: rotate(15deg)}
+	100%{-webkit-transform: rotate(-3deg)}
+}
+
+@-webkit-keyframes grasstwo {
+	0%	{-webkit-transform: rotate(4deg)}
+	50%	{-webkit-transform: rotate(26deg)}
+	100%{-webkit-transform: rotate(4deg)}
+}
+
+
+
+/*LEVELPACKS ############################################################################################*/
+
+screen.levelPacks{
+	background: url(../graphic/screens/packs/background.png) ;
+}
+
+screen.levelPacks pack{
+	width: 300px;
+	height: 300px;
+	margin: 20px 0 0 70px;
+	font-size: 30px;
+	border-radius: 1000px;
+	font-family: Kameron-Bold;
+}
+
+screen.levelPacks pack lock{
+	width:85px;
+	height: 85px;
+	display: block;
+	background: url(../graphic/screens/packs/lock.png) no-repeat;
+	position: absolute;
+	margin:95px 0 0 120px;
+}
+
+screen.levelPacks pack.einstein lock{
+	margin:92px 0 0 110px;
+}
+
+screen.levelPacks pack scoreelm{
+	position: absolute;
+	margin: 100px 0 0 115px;
+	letter-spacing: -3px;
+}
+
+screen.levelPacks pack scoreelm a{
+	display: block !important;
+	color:white !important;
+	white-space: nowrap !important;
+	text-decoration: none !important;
+
+}
+
+screen.levelPacks pack.deepForrest scoreelm{
+	margin: 110px 0 0 120px;
+}
+
+screen.levelPacks pack.einstein scoreelm{
+	margin: 116px 0 0 107px;
+}
+
+screen.levelPacks pack scoreelm ffb{
+	display:none;
+}
+
+screen.levelPacks pack:hover{
+	
+}
+
+screen.levelPacks pack completed{
+	display: block;
+	position: absolute;
+	width:195px;
+	height:134px;
+	margin: 145px 0 0 93px;
+	background: url(../graphic/screens/packs/finished.png);
+}
+
+
+
+screen.levelPacks pack.deepForrest completed{
+	margin: 154px 0 0 63px;
+}
+
+screen.levelPacks pack.einstein completed{
+	margin: 145px 0 0 176px;
+}
+
+
+screen.levelPacks.justDonePack1 pack.beginner completed{
+	opacity: 1;
+	-webkit-animation: displayPoo 1s ease-out;
+}
+
+screen.levelPacks.justDonePack2 pack.deepForrest completed{
+	opacity: 1;
+	-webkit-animation: displayPoo 1s ease-out;
+}
+
+
+screen.levelPacks pack.beginner steps{
+	display: block;
+	position: absolute;
+	width:140px;
+	height:199px;
+	margin: 290px 0 0 153px;
+	background: url(../graphic/screens/packs/steps1.png);
+}
+
+screen.levelPacks pack.deepForrest steps{
+	display: block;
+	position: absolute;
+	width:105px;
+	height:280px;
+	margin: 263px 0 0 40px;
+	background: url(../graphic/screens/packs/steps2.png);
+}
+
+screen.levelPacks.justDonePack1 pack.beginner steps{
+	-webkit-animation: steps1 3s linear;
+}
+
+screen.levelPacks.justDonePack2 pack.deepForrest steps{
+	-webkit-animation: steps2 3s linear;
+}
+
+
+
+screen.levelPacks pack.deepForrest{
+	margin: 270px 0 0 300px;
+}
+
+screen.levelPacks pack.einstein{
+	margin: 600px 0 0 30px;
+	width:350px;
+}
+
+screen.levelPacks back{
+	width: 85px;
+	height: 85px;
+	background-image: url(../graphic/screens/levels/back.png);
+	margin: 853px 0 0 23px;
+	z-index: 2;
+}
+
+screen.levelPacks back:hover{
+	opacity: 0.6;
+}
+
+
+@-webkit-keyframes steps1 {
+	0%	{height:0px;}
+	30%	{height:0px;}
+	100%{height:199px;}
+}
+
+@-webkit-keyframes steps2 {
+	0%	{height:0px;}
+	30%	{height:0px;}
+	100%{height:280px;}
+}
+
+@-webkit-keyframes displayPoo {
+	0%	{opacity: 0}
+	100%{opacity: 1}
+}
+
+
+/*LEVELS ######################################################################################################################################*/
+screen.levels{
+	background: url(../graphic/screens/levels/background.png) ;
+}
+
+screen.levels.pack1{
+	background: url(../graphic/screens/packs/pack-easy.png) ;
+}
+
+screen.levels.pack2{
+	background: url(../graphic/screens/packs/pack-forrest.png) ;
+}
+
+screen.levels.pack3{
+	background: url(../graphic/screens/packs/pack-einstein.png) ;
+}
+
+screen.levels poonie{
+	background-image: url(../graphic/screens/levels/poonie.png);
+	width: 170px;
+	height: 165px;
+	margin: -45px 0 0 -39px;
+	-webkit-animation: levelsPoonie 0.8s ease-out;
+}
+
+screen.levels poonie.blink{
+	background-image: url(../graphic/screens/levels/poonie-blink.png);
+}
+
+screen.levels levels{
+	width: 420px;
+	margin: 200px 0 0 132px;
+}
+
+screen.levels levels level{
+	position: static;
+	width: 85px;
+	height: 63px;
+	background-image: url(../graphic/screens/levels/uncleared.png);
+	float: left;
+	margin: 0 16px 35px 0;
+}
+
+screen.levels levels level num{
+	position: absolute;
+	width: 30px;
+	text-align: center;
+	color: white;
+	margin: 33px 0 0 52px;
+	font-size: 20px;
+	letter-spacing: -1px;
+	font-weight: bold;
+	font-family: Arial;
+}
+
+screen.levels levels level.cleared num{
+	margin: 73px 0 0 52px;
+}
+
+screen.levels levels level:hover{
+	opacity: 0.7;
+}
+
+screen.levels levels level.cleared{
+	height: 103px;
+	background-image: url(../graphic/screens/levels/cleared.png);
+	margin: -40px 16px 35px 0;
+	position: relative;
+}
+
+screen.levels levels level.cleared score{
+    font-size: 19px;
+    height: 24px;
+    margin: 4px 0 0 13px;
+    text-align: center;
+    width: 39px;
+    font-family: Kameron-Bold;
+}
+
+screen.levels back{
+	width: 85px;
+	height: 85px;
+	background-image: url(../graphic/screens/levels/back.png);
+	margin: 853px 0 0 23px;
+}
+
+screen.levels back:hover{
+	opacity: 0.6;
+}
+
+
+screen.levels btn{
+	margin: 860px 0 0 352px;
+	border: 3px solid white;
+	padding: 16px 46px;
+	font-size: 30px;
+}
+
+
+screen.levels btn:hover{
+	opacity: 0.4;
+}
+
+
+@-webkit-keyframes levelsPoonie {
+	0%	{margin: -138px 0 0 -123px}
+	30%	{margin: -138px 0 0 -123px}
+	100%{margin: -45px 0 0 -39px}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*USER LEVELS ######################################################################################################################################*/
+screen.user-levels{
+	background: url(../graphic/screens/user-levels/background.png) ;
+}
+
+
+screen.user-levels header.yourLevels{
+	background: url(../graphic/screens/user-levels/header-my-levels.png);
+	width: 488px;
+	height: 106px;
+	margin: 85px 0 0 71px;
+}
+
+screen.user-levels poonie{
+	background: url(../graphic/screens/user-levels/poonie.png);
+	width: 207px;
+	height: 181px;
+	margin: -63px 0 0 213px;
+	z-index: 1;
+}
+
+screen.user-levels btn{
+	margin: 860px 0 0 317px;
+	border: 3px solid white;
+	padding: 16px 46px;
+	font-size: 30px;
+}
+
+screen.user-levels btn.editor{
+	margin-left: 30px;
+}
+
+screen.user-levels btn.register{
+	display: none;
+}
+
+screen.user-levels btn.back{
+	margin-left: 317px;
+}
+
+screen.user-levels btn:hover{
+	opacity: 0.4;
+}
+
+
+screen.user-levels levels{
+	margin: 265px 0 0 93px;
+	width: 492px;
+}
+
+screen.user-levels levels level{
+	position: static;
+	width: 103px;
+	height: 93px;
+	background-image: url(../graphic/screens/levels/uncleared.png);
+	float: left;
+	margin: 0 20px 43px 0;
+	
+	
+}
+
+
+screen.user-levels levels level.cleared{
+	height: 95px;
+	background-image: url(../graphic/screens/levels/cleared.png);
+	margin: -40px 20px 110px 0;
+	position: relative;
+}
+
+
+screen.user-levels levels level:hover{
+	opacity: 0.7;
+}
+
+
+screen.user-levels levels level.shake{
+	-webkit-animation: shake 1.0s linear infinite;
+}
+
+screen.user-levels levels level.shake remove{
+	background: url(../graphic/screens/universal/remove-icon.png) no-repeat center;
+	margin: -19px 0 0 -42px;
+	padding: 35px;
+}
+
+screen.user-levels levels level.shake remove:hover{
+	opacity: 0.6;
+}
+
+screen.user-levels levels level.cleared score{
+    font-size: 19px;
+    height: 24px;
+    margin: 4px 0 0 13px;
+    text-align: center;
+    width: 39px;
+    font-family: Kameron-Bold;
+}
+
+screen.user-levels levels level name{
+    margin: 56px 0 0 -19px;
+    width: 115px;
+    height: 30px;
+    text-align: center;
+    line-height: 25%;
+    word-wrap: break-word;
+}
+
+screen.user-levels levels level.cleared name{
+   margin-top: 96px;
+}
+
+
+screen.user-levels levels level name inner{
+    font-size: 25px;
+    text-transform: none;
+    background: rgba(0, 0, 0, .55);
+    display: block;
+    padding: 10px 8px;
+    position: static;
+    line-height: 90%;
+    font-family: Arial;
+    border-radius: 6px;
+	max-height: 44px;
+    overflow: hidden;
+}
+
+screen.user-levels levels level name inner textholder{
+	max-height: 44px;
+    overflow: hidden;
+    position: static;
+}
+
+
+screen.user-levels levelsholder level:hover{
+	opacity: 0.4;
+}
+
+
+
+@-webkit-keyframes shake {
+	0%	{-webkit-transform: rotate(-3deg)}
+	10%	{-webkit-transform: rotate(3deg)}
+	20%	{-webkit-transform: rotate(-3deg)}
+	30%	{-webkit-transform: rotate(2deg)}
+	40%	{-webkit-transform: rotate(-2deg)}
+	50%	{-webkit-transform: rotate(3deg)}
+	60%	{-webkit-transform: rotate(-3deg)}
+	70%	{-webkit-transform: rotate(2deg)}
+	80%	{-webkit-transform: rotate(-2deg)}
+	90%	{-webkit-transform: rotate(2deg)}
+}
+
+
+
+
+
+
+
+
+
+
+/*GAMEPLAY ######################################################################################################################################*/
+game btn.menu{
+	z-index: 200;
+	margin: 10px 0 0 474px;
+	font-size: 30px;
+	color: white;
+	text-transform: uppercase;
+	padding:12px 28px;
+}
+
+game btn.undo{
+	z-index: 200;
+	margin:10px 0 0 299px;
+	width: 163px;
+	height: 51px;
+	padding: 0;
+	font-size: 30px;
+	color: white;
+	text-transform: uppercase;
+	padding-top:12px;
+	/*background-image: url(../graphic/screens/gameplay/restart.png);*/
+	/*background-repeat: no-repeat;
+	background-position: center;*/
+	/*-webkit-animation: levelClearSpin 500.0s linear infinite;*/
+
+}
+
+
+game onscreen {
+	background: rgba(0,0,0,0.8) url(../graphic/screens/gameplay/level-sign.png) no-repeat center center;
+	display: block;
+	height: 960px;
+	width: 640px;
+	position: absolute;
+	transform-origin: 0 0;
+	transform: scale(var(--onscreen-scale));
+	-webkit-transform: scale(var(--onscreen-scale));
+	left: var(--onscreen-left);
+	top: var(--onscreen-top);
+	opacity: 0;
+	z-index: 10000;
+	-webkit-animation: showOnScreen 2s ease-out;
+}
+
+game onscreen leveltitle{
+	opacity: 1;
+	color:white;
+	font-size: 60px;
+	text-align: center;
+	display: block;
+	margin-top: 458px;
+	font-family: Kameron-Bold;
+}
+
+game onscreen.pack1 leveltitle{
+	font-size: 45px;
+	margin-top: 468px;
+}
+
+game btn.menu.editor{
+	margin-left: 458px;
+}
+
+
+game btn.undo.editor{
+	margin-left: 380px;
+}
+
+game btn.undo.disabled{
+	opacity: 0.3;
+	background-color: black !important;
+}
+
+
+
+game btn.steps{
+	z-index: 200;
+	margin: 7px 19px 5px 14px;
+	font-size: 30px;
+	color: white;
+	text-transform: uppercase;
+	padding:7px 28px 5px 57px;
+	background-image: url(../graphic/screens/gameplay/steps.png);
+	background-repeat: no-repeat;
+	background-position: 15px 10px;
+}
+
+game btn.steps:hover{
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+game tutorial{
+	width: 640px;
+	height: 960px;
+	overflow: hidden;
+	display: block;
+	position: absolute;
+	z-index: 9999999;
+	margin-top: 0px;
+	background: url(../graphic/screens/gameplay/tips.png) no-repeat;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s ease-in-out;
+}
+
+
+
+game tutorial.show{
+	opacity: 1;
+}
+
+
+
+
+
+game tutorial startheader{
+	background: rgba(0, 0, 0, .75) url(../graphic/screens/universal/slidetomove.png) no-repeat center;
+	width: 640px;
+	height: 960px;
+	display: block;
+	position: absolute;
+	overflow: hidden;
+	margin-top: 0px;
+	-webkit-transition: opacity 0.5s ease-in-out;
+}
+
+game tutorial.start startheader{
+	opacity: 0;
+}
+
+game tutorial.start fullfinger{
+	margin-top: 200px;
+	position: absolute;
+	
+}
+
+game tutorial.start finger{
+	background-image: url(../graphic/screens/universal/finger.png);
+	width: 457px;
+	height: 430px;
+	display: block;
+	position: absolute;
+	margin: 479px 0 0 295px;
+	z-index: 2;
+	-webkit-animation: tutorialFinger 0.6s ease-out;
+}
+
+game tutorial.start shadow{
+	background-image: url(../graphic/screens/universal/finger-shadow.png);
+	width: 457px;
+	height: 430px;
+	display: block;
+	position: absolute;
+	margin: 498px 0 0 293px;
+	z-index: 1;
+	-webkit-animation: tutorialFingerShadow 0.6s ease-out;
+}
+
+
+game tutorial.start.slide finger{
+	margin: 479px 0 0 295px;
+	-webkit-animation: tutorialFingerSlide 1s ease-out 2;
+}
+
+game tutorial.start.slide shadow{
+	margin: 498px 0 0 293px;
+	-webkit-animation: tutorialFingerShadowSlide 1s ease-out 2;
+}
+
+game tutorial.start.slideOut finger{
+	margin: 962px 0 0 479px;
+	-webkit-animation: tutorialFingerSlideOut 0.5s ease-in;
+}
+
+game tutorial.start.slideOut shadow{
+	margin: 1262px 0 0 279px;
+	-webkit-animation: tutorialFingerShadowSlideOut 0.5s ease-in;
+}
+
+game speak{
+	width: 416px;
+	height:379px;
+	background:url(../graphic/screens/gameplay/speak.png);
+	position: absolute;
+	margin:228px 0 0 310px;
+	left: var(--map-left);
+	top: var(--map-top);
+	transform-origin: 0 0;
+	transform: scale(var(--map-scale));
+	-webkit-transform: scale(var(--map-scale));
+	z-index: 1000;
+	-webkit-animation: showSpeak 1s ease-out;
+}
+
+game speak.hide{
+
+	-webkit-animation: hideSpeak 0.3s ease-out;
+}
+
+game minipoonie{
+	width: 15px;
+	height:15px;
+	background:url(../graphic/screens/gameplay/minipoonie.png) no-repeat;
+	position: absolute;
+	margin:155px 0 0 162px;
+	-webkit-animation: miniJump 4s infinite;
+}
+
+game hand{
+	width: 120px;
+	height:95px;
+	background:url(../graphic/screens/gameplay/hand.png) no-repeat;
+	position: absolute;
+	margin:137px 0 0 194px;
+	-webkit-animation: slideFinger 2s infinite;
+}
+
+
+@-webkit-keyframes miniJump {
+	0%{margin-top: 155px;opacity:0;}
+	30%{margin-top: 145px;opacity:1;}
+	60%{margin-top: 145px}
+	90%{margin-top: 135px;opacity:1;}
+	100%{margin-top: 135px;opacity:0;}
+	
+}
+
+@-webkit-keyframes slideFinger {
+	0%{margin-top: 137px}
+	80%{margin-top: 107px}
+}
+
+
+@-webkit-keyframes tutorialFingerSlideOut {
+	0%{margin: 479px 0 0 295px}
+	100%{margin: 962px 0 0 479px}
+}
+
+@-webkit-keyframes tutorialFingerShadowSlideOut {
+	0%{margin: 498px 0 0 293px;}
+	100%{margin: 1262px 0 0 279px}
+}
+
+
+@-webkit-keyframes tutorialFingerSlide {
+	0%	{margin-top: 479px}
+	40%	{margin-top: 279px}
+	60%	{margin-top: 249px}
+	100%{margin-top: 479px}
+}
+
+@-webkit-keyframes tutorialFingerShadowSlide {
+	0%	{margin-top: 498px}
+	40%	{margin-top: 290px}
+	60%	{margin-top: 330px}
+	100%{margin-top: 498px}
+}
+
+
+@-webkit-keyframes tutorialFinger {
+	0%	{margin: 962px 0 0 479px; -webkit-transform: rotate(-50deg)}
+	100%{margin: 479px 0 0 295px;}
+}
+
+@-webkit-keyframes tutorialFingerShadow {
+	0%	{margin: 1262px 0 0 279px; -webkit-transform: rotate(-50deg)}
+	100%{margin: 498px 0 0 293px;}
+}
+
+@-webkit-keyframes showSpeak {
+	0%	{opacity:0;}
+	100%{opacity:1;}
+}
+
+@-webkit-keyframes hideSpeak {
+	0%	{opacity:1;}
+	100%{opacity:0;}
+}
+
+@-webkit-keyframes showOnScreen{
+	0%		{opacity: 0}
+	5%		{opacity: 1}
+	80%		{opacity: 1}
+	100%	{opacity: 0}
+}
+
+
+
+
+/*GAME MENU ######################################################################################################################################*/
+screen.game-menu{
+	background: rgba(0, 0, 0, .75);
+}
+
+screen.game-menu menuholder{
+	width: 640px;
+	margin-top: 200px;
+}
+
+screen.game-menu btn{
+	position: static;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	color: black;
+	background: white;
+	width: 400px;
+	text-transform: none;
+}
+
+screen.game-menu btn:hover{
+	background: rgba(255, 255, 255, .75);
+}
+
+screen.game-menu btn.challenges{
+	display: none;
+}
+
+screen.game-menu beat{
+	display: none;
+}
+
+screen.game-menu btn.disabled{
+	opacity: 0.4;
+	background: white !important;
+}
+
+screen.game-menu challenge{
+	margin-top: 800px;
+	width: 640px;
+}
+
+
+screen.game-menu challenge score{
+	position: static;
+	text-align: center;
+	font-size: 30px;
+	text-transform: none;
+	margin-bottom: 7px;
+}
+
+screen.game-menu challenge btn{
+	font-size: 30px;
+}
+
+screen.game-menu levelname{
+	width:640px;
+	height: 130px;
+	top: 0;
+	left: 0;
+	text-align: center;
+	font-size: 50px;
+	margin-top: 15px;
+	text-transform: none;
+	font-family: Kameron-Bold;
+	padding-top: 45px;
+	background: url(../graphic/screens/gameplay/level-sign-for-menu.png) no-repeat center top;
+}
+
+screen.game-menu levelname.pack1{
+	font-size: 40px;
+	padding-top: 50px;
+}
+
+
+screen.game-menu.isChallenge challenge{
+	display: none;
+}
+
+screen.game-menu.isChallenge btn.skip{
+	display: none;
+}
+
+screen.game-menu.isChallenge btn.select{
+	display: none;
+}
+
+screen.game-menu.isChallenge btn.challenges{
+	display: block;
+}
+
+screen.game-menu.isChallenge beat{
+	display: block;
+	position: absolute;
+	text-align: center;
+	width: 400px;
+	margin: 700px 0 0 120px;
+	font-size: 30px;
+}
+
+screen.game-menu.isChallenge beat steps{
+	display: block;
+	position: static;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+screen.game-menu audiobtn{
+	background-image: url(../graphic/screens/universal/icon-sound-on.png);
+	width: 57px;
+	height: 57px;
+	margin: 13px 0 0 15px;
+	z-index: 19;
+	display: block;
+	position: absolute;
+}
+
+screen.game-menu audiobtn:hover{
+	opacity: 0.5
+}
+
+screen.game-menu audiobtn.off{
+	background-image: url(../graphic/screens/universal/icon-sound-off.png) !important;
+}
+
+
+
+
+
+
+
+
+/*LEVEL CLEAR ######################################################################################################################################*/
+screen.level-clear{
+	background: url(../graphic/screens/level-clear/background.png);
+}
+
+
+screen.level-clear poonie{
+	background-image: url(../graphic/screens/level-clear/poonie.png);
+	width: 232px;
+	height: 231px;
+	margin: -51px 0 0 -46px;
+	z-index: 2;
+	-webkit-animation: levelClearPoonie 1.0s ease-out;
+}
+
+screen.level-clear poonie.blink{
+	background-image: url(../graphic/screens/level-clear/poonie-blink.png);
+}
+
+screen.level-clear poo{
+	background-image: url(../graphic/screens/level-clear/poo.png);
+	width: 232px;
+	height: 231px;
+	margin: 111px 0 0 243px;
+	z-index: 2;
+}
+
+screen.level-clear poo score{
+	font-family: Kameron-Bold;
+    margin: 13px 0 0 75px;
+    text-align: center;
+    width: 95px;
+    font-size: 45px;
+    letter-spacing: -3px;
+}
+
+screen.level-clear header{
+	background-image: url(../graphic/screens/level-clear/nice.png);
+	width: 240px;
+	height: 103px;
+	margin: 290px 0 0 202px;
+	z-index: 3;
+}
+
+screen.level-clear header.highscore{
+	background-image: url(../graphic/screens/level-clear/newhighscore.png);
+	width: 555px;
+	height: 82px;
+	margin: 290px 0 0 42px;
+	z-index: 3;
+}
+
+
+screen.level-clear swirl{
+	background-image: url(../graphic/screens/universal/spin.png);
+	width: 1132px;
+	height: 1104px;
+	margin: -264px 0 0 -247px;
+	z-index: 1;
+	-webkit-animation: levelClearSpin 20.0s linear infinite;
+}
+
+
+
+screen.level-clear btn{
+	padding: 17px 46px;
+	z-index: 2;
+}
+
+screen.level-clear btn.next{
+	margin:468px 0 0 219px;
+}
+
+screen.level-clear btn.challenge{
+	margin:574px 0 0 69px;
+}
+
+screen.level-clear btn.levels{
+	margin:679px 0 0 200px;
+}
+
+
+screen.level-clear.editorMode btn.next{
+	margin-left: 189px;
+}
+
+screen.level-clear.editorMode btn.challenge{
+	margin-left: 57px;
+}
+
+screen.level-clear.editorMode btn.levels{
+	margin-left: 106px;
+}
+
+
+
+
+
+@-webkit-keyframes levelClearSpin {
+	0%	{-webkit-transform: rotate(0deg)}
+	100%{-webkit-transform: rotate(360deg)}
+}
+
+@-webkit-keyframes levelClearPoonie {
+	0%	{margin: -185px 0 0 -174px}
+	50%	{margin: -185px 0 0 -174px}
+	100%{margin: -51px 0 0 -46px}
+}
+
+
+
+
+
+
+
+
+
+/*CHALLENGE ######################################################################################################################################*/
+screen.challenge{
+	background: url(../graphic/screens/challenge/background.png);
+}
+
+screen.challenge swirl{
+	background-image: url(../graphic/screens/universal/spin.png);
+	width: 1132px;
+	height: 1104px;
+	margin: -304px 0 0 -247px;
+	-webkit-animation: challengeSpin 40.0s linear infinite;
+}
+
+screen.challenge header{
+	background-image: url(../graphic/screens/challenge/header.png);
+	width: 545px;
+	height: 283px;
+	margin: 43px 0 0 48px;
+}
+
+screen.challenge text{
+	width: 454px;
+	height: 283px;
+	margin: 364px 0 0 48px;
+	width: 549px;
+	text-align: center;
+}
+
+screen.challenge input.yourName{
+	margin: 496px 0 0 43px;
+	text-align: center;
+}
+
+screen.challenge input.theirEmail{
+	margin: 595px 0 0 43px;
+	text-align: center;
+}
+
+screen.challenge btn.back{
+	margin: 750px 0 0 69px;
+	width: 151px;
+}
+
+screen.challenge btn.send{
+	margin: 750px 0 0 331px;
+	width: 151px;
+}
+
+@-webkit-keyframes challengeSpin {
+	0%	{-webkit-transform: rotate(0deg)}
+	100%{-webkit-transform: rotate(360deg)}
+}
+
+
+
+
+
+
+
+
+/*CHALLENGE SENT ######################################################################################################################################*/
+screen.challengesent{
+	background: url(../graphic/screens/challenge-sent/background.png);
+}
+
+screen.challengesent header{
+	background-image: url(../graphic/screens/challenge-sent/header.png);
+	width: 518px;
+	height: 186px;
+	margin: 503px 0 0 62px;
+	z-index: 2;
+}
+
+screen.challengesent clouds{
+	background-image: url(../graphic/screens/challenge-sent/clouds.png);
+	width: 816px;
+	height: 1001px;
+	margin: 25px 0 0 0;
+	left: -78px;
+	z-index: 2;
+	/*-webkit-animation: challengeSentMoveClouds 10.0s linear;*/
+}
+
+screen.challengesent paperfly{
+	background-image: url(../graphic/screens/challenge-sent/paperfly.png);
+	width: 585px;
+	height: 246px;
+	margin: 257px 0 0 18px;
+	z-index: 3;
+	-webkit-animation: challengeSentPaperFly 3s ease-in-out infinite;
+}
+
+
+screen.challengesent swirl{
+	background-image: url(../graphic/screens/universal/spin.png);
+	width: 1132px;
+	height: 1104px;
+	margin: -134px 0 0 -270px;
+	z-index: 1;
+	-webkit-animation: challengeSentSpin 20.0s linear infinite;
+}
+
+
+@-webkit-keyframes challengeSentMoveClouds {
+	0%	{left: 8px}
+	100%	{left: -200px}
+}
+
+@-webkit-keyframes challengeSentSpin {
+	0%	{-webkit-transform: rotate(0deg)}
+	100%{-webkit-transform: rotate(360deg)}
+}
+
+
+@-webkit-keyframes challengeSentPaperFly {
+	0%	{-webkit-transform: rotate(0deg); margin-top: 257px;
+	}
+	50%{-webkit-transform: rotate(-4deg); margin-top: 287px;}
+	100%{-webkit-transform: rotate(0deg); margin-top: 257px;}
+}
+
+
+
+
+
+
+
+
+/*FINISH ######################################################################################################################################*/
+screen.finish.highscoremaster{
+	background-image: url(../graphic/screens/finished/background-highscore.png);
+}
+
+screen.finish{
+	background: url(../graphic/screens/finished/background.png);
+}
+
+screen.finish clickarea{
+	height: 960px;
+	width: 640px;
+	z-index: 1;
+}
+
+
+
+
+
+
+
+
+/*EDITOR OVERVIEW ######################################################################################################################################*/
+screen.editor-overview{
+	background-image: url(../graphic/screens/editor-overview/background.png);
+}
+
+screen.editor-overview poonie{
+	background-image: url(../graphic/screens/editor-overview/poonie.png);
+	width: 273px;
+	height: 213px;
+	margin: 669px 0 0 205px;
+	z-index: 4;
+}
+
+screen.editor-overview board{
+	background-image: url(../graphic/screens/editor-overview/board.png);
+	width: 511px;
+	height: 775px;
+	z-index: 3;
+	margin: 64px 0 0 63px;
+	-webkit-animation: editorOverviewBoard 1.3s ease-out;
+}
+
+screen.editor-overview dingler{
+	background-image: url(../graphic/screens/editor-overview/dingler.png);
+	background-position: left bottom;
+	width: 40px;
+	height: 154px;
+	z-index: 2;
+	margin: 683px 0 0 98px;
+	-webkit-animation: editorOverviewDingler 4.0s ease-out;
+}
+
+screen.editor-overview boardend{
+	background-image: url(../graphic/screens/editor-overview/board-end.png);
+	width: 533px;
+	height: 34px;
+	z-index: 5;
+	margin: 53px 0 0 52px;
+	margin-top: 832px;
+	height: 0px;
+	-webkit-animation: editorOverviewBoardEnd 1.3s ease-out;
+}
+
+screen.editor-overview box{
+	background-image: url(../graphic/screens/editor-overview/existing-levels-box.png);
+	width: 434px;
+	height: 480px;
+	z-index: 4000;
+	margin: 81px 0 0 99px;
+	-webkit-animation: editorOverviewBox 0.9s ease-out;
+}
+
+screen.editor-overview box inner{
+	color: black;
+    font-size: 39px;
+    letter-spacing: -2px;
+    height: 357px;
+    margin: 115px 0 0 4px;
+    overflow: hidden;
+    position: relative;
+    width: 427px;
+}
+
+screen.editor-overview box inner levelitem{
+	position: static;
+	padding: 10px 20px 12px 20px;
+	text-transform: none;
+	overflow: hidden;
+	height: 46px;
+	line-height: 130%;
+}
+
+screen.editor-overview box inner levelitem.choosen{
+	background: #fff08f;
+}
+
+
+screen.editor-overview btn{
+	font-size: 31px;
+    margin: 582px 0 0 100px;
+    padding: 10px 64px;
+    z-index: 3;
+    -webkit-animation: editorOverviewBtn 1.60s linear;
+}
+
+screen.editor-overview btn.new{
+    margin-left: 331px;
+}
+
+
+screen.editor-overview lamps{
+	background-image: url(../graphic/screens/editor-overview/lamps.png);
+	width: 650px;
+	height: 194px;
+	z-index: 5;
+	-webkit-animation: editorOverviewLamps 2.0s ease-out;
+}
+
+
+
+@-webkit-keyframes editorOverviewBtn {
+	0%	{opacity: 0;
+	}
+	50%	{opacity: 0;
+	}
+	100%{opacity: 1;
+	}
+}
+
+@-webkit-keyframes editorOverviewBoard {
+	0%	{height: 0px;
+	}
+	20%	{height: 0px;
+	}
+	100%{height: 775px;
+	}
+}
+
+@-webkit-keyframes editorOverviewBox {
+	0%	{height: 0px;
+	}
+	35%	{height: 0px;
+	}
+	100%{height: 530px;
+	}
+}
+
+@-webkit-keyframes editorOverviewLamps {
+	0%	{
+		margin-top: -194px;
+	}
+	
+	60%	{
+		margin-top: -194px;
+	}
+	100%{
+		margin-top: 0px;
+	}
+}
+
+@-webkit-keyframes editorOverviewBoardEnd {
+	0%{
+		margin-top: 53px;
+		height: 34px;
+	}
+	
+	20%{
+		margin-top: 53px;
+		height: 34px;
+	}
+	
+	62%{
+		height: 34px;
+	}
+	
+	65%{
+		height: 0px;
+	}
+	
+	100%{
+		margin-top: 832px;
+		height: 0px;
+	}
+}
+
+
+@-webkit-keyframes editorOverviewDingler {
+	0%	{height: 0px;}
+	23%	{height: 0px;}
+	30%{
+		height: 154px;
+		margin-top: 683px
+	}
+	30%{
+		height: 154px;
+		margin-top: 683px
+	}
+	
+	35%{
+		margin-top: 643px
+	}
+	
+	45%{
+		margin-top: 683px
+	}
+	
+	100%{
+		margin-top: 683px
+	}
+}
+
+
+
+
+
+
+/*EDITOR ######################################################################################################################################*/
+screen.editor{
+	background-image: url(../graphic/screens/editor/dummy.png);
+}
+
+screen.editor border{
+	background-image: url(../graphic/screens/editor/construction-border.png);
+	width: 640px;
+	height: 960px;
+	z-index: 2;
+}
+
+screen.editor backgroundholder{
+	background-image: url(../graphic/grass-base.png);
+	width: 640px;
+	height: 960px;
+	z-index: 1;
+}
+
+screen.editor editor map{
+	background: none;
+}
+
+screen.editor tip{
+	background-color: rgba(0, 0, 0, .75);
+	background-image: url("../graphic/screens/editor/tip.png");
+    background-position: 36px 164px;
+    height: 960px;
+    margin: 0;
+    padding: 218px 195px 218px 96px;
+    width: 445px;
+    z-index: 5;
+
+}
+
+screen.editor tip.hide{
+	opacity: 0;
+	-webkit-animation: editorTipsHide 0.3s linear;
+	margin-left:-1000px ;
+}
+
+screen.editor tip h1,
+screen.editor tip p,
+screen.editor tip p *{
+	color: black;
+	position: static;
+	font-size: 26px;
+	text-transform: none;
+	margin: 18px 0;
+	line-height: 110%;
+}
+
+screen.editor tip h1{
+	font-size: 37px;
+	text-transform: uppercase;
+	letter-spacing: -2px;
+	margin: 0px;
+}
+
+screen.editor tip strong{
+	display: inline;
+}
+
+screen.editor tip btn{
+	font-size: 31px;
+	padding: 10px 34px;
+}
+
+
+screen.editor savescreen{
+	width: 640px;
+	height: 960px;
+	background: rgba(0, 0, 0, .85) url(../graphic/screens/editor/construction-border.png) no-repeat;
+	position: absolute;
+	z-index: 2000001;
+	color: black;
+}
+
+screen.editor savescreen inner{
+	content: "";
+	width: 640px;
+	height: 960px;
+	background: url(../graphic/screens/editor/tip.png) no-repeat 39px 139px;
+	position: absolute;
+	z-index: 2000001;
+	color: black;
+}
+
+screen.editor savescreen header{
+	font-size: 63px;
+	margin: 189px 0 0 105px;
+	font-family: Kameron-Bold;
+}
+
+screen.editor savescreen text{
+	font-size: 28px;
+	line-height: 104%;
+	margin: 260px 0 0 105px;
+	letter-spacing: 0px;
+	width: 441px;
+}
+
+screen.editor savescreen input{
+background: none;
+	border: 4px solid black;
+    border-radius: 100px;
+    color: #CCCCCC;
+    font-family: Arial;
+    font-size: 36px;
+    height: 65px;
+    margin: 376px 0 0 105px;
+    padding: 0;
+    text-align: center;
+    width: 422px;
+}
+
+screen.editor savescreen btn{
+	margin: 476px 0 0 102px;
+	padding: 7px 55px;
+	font-size: 36px;
+	color: white;
+}
+
+
+screen.editor savescreen btn.save{
+	margin-left: 329px;
+}
+
+
+screen.editor savescreen.saved{
+	background: rgba(0, 0, 0, .85)
+}
+
+screen.editor savescreen icon{
+	background: url(../graphic/screens/universal/check.png) no-repeat;
+	width: 415px;
+	height: 403px;
+	margin: 266px 0 0 148px;
+}
+
+
+
+screen.editor .hide playholder{
+	display: none;
+}
+
+screen.editor playholder{
+	background: rgba(0, 0, 0, .85);
+	position: absolute;
+	margin-top: -700px;
+	display: block;
+	width: 640px;
+	height: 100px;
+	-webkit-animation: playShow 0.7s ease-out;
+}
+
+screen.editor playholder btn.play{
+	margin-top: 10px;
+	margin-left: 341px;
+    padding: 14px 39px;
+    white-space: nowrap;
+}
+
+
+@-webkit-keyframes playShow {
+	0%	{
+		opacity: 0;
+	}
+	80%	{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes editorTipsHide {
+	0%	{opacity: 1;
+		margin-left: 0px;
+	}
+	99%	{opacity: 0;
+		margin-left: 0px;
+	}
+	100%{
+		opacity: 0;
+		margin-left:-1000px ;
+	}
+}
+
+
+
+
+
+
+
+
+
+/*EDITOR MENU ######################################################################################################################################*/
+screen.editor editormenu{
+	background: black;
+	height: 260px;
+	width: 640px;
+	margin: 700px 0 0 0;
+	z-index: 4;
+	/*margin-top: 765px;*/
+}
+
+screen.editor editor{
+	z-index: 3;
+}
+
+screen.editor editormenu.hide{
+	margin-top: 962px;
+	-webkit-transition: margin 0.4s ease-in-out;
+}
+
+screen.editor editormenu.show{
+	margin-top: 700px;
+	-webkit-transition: margin 0.4s ease-in-out;
+}
+
+screen.editor editormenu topmenu{
+	height: 86px;
+	width: 640px;
+	margin: -86px 0 0 0;
+	z-index: 2;
+}
+
+screen.editor editormenu topmenu menuitem{
+	position: static;
+	float: left;
+	background: rgba(0, 0, 0, .4);
+	border-radius: 10px 10px 0 0;
+	padding: 21px 32px 20px;
+	margin-right: 3px;
+	font-family: Kameron-Bold;
+	font-size: 37px;
+}
+
+screen.editor editormenu showme{
+	border-radius: 10px 10px 0 0;
+	width: 94px;
+	height: 94px;
+	margin: -86px 0 0 546px;
+	background:black url(../graphic/screens/editor/hide-show.png) no-repeat 38px 37px;
+	z-index: 2;
+}
+
+screen.editor editormenu.hide showme{
+	background:black url(../graphic/screens/editor/hide-show.png) no-repeat -72px 37px;
+}
+
+screen.editor editormenu.hide topmenu {
+	margin: 0px 0 0 0;
+	-webkit-transition: margin 0.4s ease-in-out;
+}
+
+screen.editor editormenu.show topmenu {
+	margin: -86px 0 0 0;
+	-webkit-transition: margin 0.4s ease-in-out;
+}
+
+screen.editor editormenu showme{
+	z-index: 3;
+}
+
+screen.editor editormenu topmenu menuitem.active{
+	background: black;
+}
+
+
+screen.editor editormenu itemtypesholder{
+	height: 260px;
+	width: 640px;
+	background: black;
+	z-index: 2;
+}
+
+screen.editor editormenu itemtypesholder itemtypeholder{
+	padding: 10px;
+	display: none;
+}
+
+screen.editor editormenu itemtypesholder itemtypeholder.active{
+	display: block;
+}
+
+screen.editor editormenu itemtypesholder itemtypeholder typeitem{
+	position: static;
+	float: left;
+	height: 140px;
+	width: 140px;
+	margin-right: 10px;
+	background-color: white;
+	background-position: center;
+	
+	border-radius: 5px;
+}
+
+screen.editor editormenu itemtypesholder itemtypeholder typeitem.active{
+	background-color: #a4aa00;
+}
+
+
+screen.editor editormenu btn{
+	background: white;
+	color: black;
+	margin-top: 162px;
+	margin-left: 10px;
+	z-index: 3;
+	width: 210px;
+	border-radius: 5px;
+}
+
+screen.editor editormenu btn:hover{
+	background: #ccc;
+}
+
+screen.editor editormenu btn.save{
+	margin-left: 325px;
+}
+
+
+
+
+
+
+@-webkit-keyframes editorMenuHide {
+	0%	{
+		margin-top: 700px;
+	}
+	
+	20%	{
+		margin-top: 700px;
+	}
+	100%{
+		margin-top: 962px;
+	}
+}
+
+@-webkit-keyframes editorMenuShow {
+	0%	{
+		margin-top: 962px;
+	}
+	
+	100%{
+		margin-top: 700px;
+	}
+}
+
+@-webkit-keyframes editorMenuItemHide {
+	0%	{opacity: 1;
+	}
+	100%{opacity: 0;
+	}
+}
+
+@-webkit-keyframes editorMenuItemShow {
+	0%	{opacity: 0;
+	}
+	100%{opacity: 1;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/*EDITOR ALERT ######################################################################################################################################*/
+screen.editor alert{
+	background: black;
+	width: 640px;
+	height: 960px;
+	z-index: 4;
+}
+
+screen.editor inner{
+	width: 640px;
+	height: 960px;
+}
+
+screen.editor alert header{
+	margin: 243px 0 0 61px;
+	width: 509px;
+	text-align: center;
+	font-size: 74px;
+	line-height: 85%;
+	position: static;
+}
+
+screen.editor alert text{
+	margin: 30px 0 50px 57px;
+	text-transform: none;
+	width: 511px;
+	position: static;
+	letter-spacing: 0px;
+	text-align: center;
+}
+
+screen.editor alert btn{
+	border: 6px solid white;
+	display: block;
+	margin: auto;
+	position: static;
+	width: 100px;
+}
+
+screen.editor alert btn:hover{
+	background: rgba(255, 255, 255, .2);
+}
+
+
+screen.editor alert.wantToPublish btn{
+	width: 389px;
+	margin-bottom: 20px;
+}
+
+
+screen.editor alert.wantToPublish header{
+	margin-top: 183px;
+}
+
+
+
+
+
+
+
+
+
+/* FACEBOOK FRIENDS ################################################################################################################################*/
+screen.facebookFriends{
+	background: #253f67;
+	background: -moz-linear-gradient(45deg, #253f67 0%, #405b98 100%);
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#253f67), color-stop(100%,#405b98));
+	background: -webkit-linear-gradient(45deg, #253f67 0%,#405b98 100%);
+	background: -o-linear-gradient(45deg, #253f67 0%,#405b98 100%);
+	background: -ms-linear-gradient(45deg, #253f67 0%,#405b98 100%);
+	background: linear-gradient(45deg, #253f67 0%,#405b98 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#253f67', endColorstr='#405b98',GradientType=1 );
+	
+	
+}
+
+screen.facebookFriends header{
+	background: url(../graphic/screens/facebook-friends/header.png) no-repeat;
+	width: 593px;
+	height: 111px;
+	margin: 5px 0 0 23px;
+}
+
+
+screen.facebookFriends poonie{
+	background: url(../graphic/screens/facebook-friends/poonie.png) no-repeat;
+	width: 170px;
+	height: 145px;
+	margin: 63px 0 0 361px;
+	
+}
+
+screen.facebookFriends list{
+	background: #f9f9f9;
+	height: 685px;
+	margin-top: 139px;
+	width: 640px;
+	z-index: 1;
+	
+	border: 4px solid #8a99b5;
+	
+	border-right: none;
+	border-left: none;
+	
+	overflow: scroll;
+ 	-webkit-overflow-scrolling: touch;
+
+}
+
+screen.facebookFriends letters{
+	z-index: 2;
+	margin: 149px 0 0 600px;
+}
+
+screen.facebookFriends letters letter{
+	position: static;
+	margin-bottom: 0px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 22px;
+	text-align: center;
+	width: 30px;
+	color: #404040;
+}
+
+screen.facebookFriends list person{
+	position: static;
+	border-bottom: 2px solid #dfdfdf;
+	border-top: 2px solid #ffffff;
+	padding: 24px 25px;
+	font-family: Arial;
+	font-size: 32px;
+	color: #404040;
+	text-transform: none;
+	font-weight: bold;
+}
+
+screen.facebookFriends list person.choosen{
+	background: #253f67;
+	color: white;
+	border-top-color: #253f67; 
+}
+
+
+screen.facebookFriends list splitter{
+	position: static;
+	text-transform: uppercase;
+	padding: 20px 25px;
+	font-family: Arial;
+	font-size: 32px;
+	background: #ccc;
+	color: #333;
+	font-weight: bold;
+}
+
+screen.facebookFriends btn{
+	margin: 850px 0 0 211px;
+	background: rgba(255, 255, 255, .20);
+	border: 5px solid #1e3354;
+	color: white;
+}
+
+screen.facebookFriends btn:hover{
+	background: rgba(255, 255, 255, .50);
+}
+
+screen.facebookFriends btn.share{
+	margin-left: 325px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FACEBOOK LOGIN ################################################################################################################################*/
+screen.facebook-login{
+	background: #253f67;
+	background: -moz-linear-gradient(45deg, #253f67 0%, #405b98 100%);
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#253f67), color-stop(100%,#405b98));
+	background: -webkit-linear-gradient(45deg, #253f67 0%,#405b98 100%);
+	background: -o-linear-gradient(45deg, #253f67 0%,#405b98 100%);
+	background: -ms-linear-gradient(45deg, #253f67 0%,#405b98 100%);
+	background: linear-gradient(45deg, #253f67 0%,#405b98 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#253f67', endColorstr='#405b98',GradientType=1 );
+}
+
+screen.facebook-login facelogin{
+	background: url(../graphic/screens/universal/facebook-login.png) no-repeat;
+	width: 484px;
+	height: 87px;
+	margin: 422px 0 0 76px;
+	z-index: 2;
+}
+
+screen.facebook-login btn{
+	margin: 550px 0 0 220px;
+	z-index:3;
+}
+
+screen.facebook-login facelogin:hover{
+	opacity: 0.6;
+}
+
+screen.facebook-login swirl{
+	background-image: url(../graphic/screens/universal/spin.png);
+	width: 1132px;
+	height: 1104px;
+	margin: -84px 0 0 -247px;
+	z-index: 1;
+	-webkit-animation: levelClearSpin 20.0s linear infinite;
+}
+
+
+
+/* CHALLENGES OVERVIEW2 ################################################################################################################################*/
+screen.challengesOverview2{
+    background-image: url(../graphic/screens/challenges2/background.png);
+}
+
+screen.challengesOverview2 stats{
+    position: absolute;
+    width: 640px;
+    margin: 132px 0 0 0;
+    font-size: 26px;
+    text-align: center;
+}
+
+screen.challengesOverview2 list{
+    width: 524px;
+    height: 606px;
+    margin: 229px 0 0 54px;
+    position: absolute;
+    font-size: 31px;
+    overflow:hidden;
+}
+
+screen.challengesOverview2 list *{
+    display:block;
+    position:static;
+    font-family:Margarine-Regular;
+    text-transform:none !important;
+}
+
+screen.challengesOverview2 list > header{
+    background: url(../graphic/screens/challenges2/header.png) no-repeat;
+    width: 459px;
+    font-size: 32px;
+    height: 61px;
+    padding: 18px 28px 5px 28px;
+    margin-bottom: 15px;
+    font-family: Kameron-Bold;
+    text-align: center;
+    overflow:hidden;
+}
+
+screen.challengesOverview2 list profilepic{
+    display: block;
+    float: right;
+    width:83px;
+    height:83px;
+    background-repeat: no-repeat;
+    margin: 0;
+    background-size: 100%
+}
+
+
+screen.challengesOverview2 list section header{
+    background:rgba(0,0,0,.17);
+}
+
+screen.challengesOverview2 list section header headertext{
+    padding:20px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+screen.challengesOverview2 list section + section header{
+    margin-top:30px;
+}
+
+screen.challengesOverview2 list collapsesection + header{
+    margin-top:50px;
+}
+
+screen.challengesOverview2 list section challenge{
+    background:#fff;
+    padding:20px;
+    color:#333;
+    margin-top:3px;
+}
+
+screen.challengesOverview2 list section challenge:hover{
+    opacity:.8;
+}
+
+screen.challengesOverview2 list section challenge level{
+    display:inline
+}
+
+screen.challengesOverview2 list section challenge score{
+    float:right;
+}
+
+screen.challengesOverview2 btn.back{
+    margin:855px 0 0 54px;
+    padding:11px 37px;
+}
+
+
+
+/* CHALLENGES OVERVIEW ################################################################################################################################*/
+screen.challengesOverview{
+	background-image: url(../graphic/screens/challenges/background.png);
+}
+
+screen.challengesOverview list{
+	margin-top: 150px;
+	height: 650px;
+	overflow: auto
+}
+
+screen.challengesOverview list challenge{
+	height: 185px;
+	width: 574px;
+	background: url(../graphic/screens/challenges/challenge-item.png) no-repeat;
+	position: static;
+	margin-bottom: 20px;
+	margin-left: 30px;
+	display: block;
+}
+
+screen.challengesOverview list challenge.draw{
+	background: url(../graphic/screens/challenges/challenge-item-draw.png) no-repeat;
+}
+
+screen.challengesOverview list challenge.new{
+	background: url(../graphic/screens/challenges/challenge-item-new.png) no-repeat;
+}
+
+screen.challengesOverview list challenge.newChallenge{
+	background: url(../graphic/screens/challenges/challenge-item-new-challenge.png) no-repeat;
+}
+
+screen.challengesOverview list challenge winner.blue{
+	background: url(../graphic/screens/challenges/winner-blue.png) no-repeat;
+	width: 59px;
+	height: 64px;
+	margin-top: 13px;
+}
+
+screen.challengesOverview list challenge winner.red{
+	background: url(../graphic/screens/challenges/winner-red.png) no-repeat;
+	width: 62px;
+	height: 55px;
+	margin: 16px 0 0 500px; 
+}
+
+screen.challengesOverview list challenge winner{
+	display: none;
+}
+
+screen.challengesOverview list challenge winner.winner{
+	display: block;
+}
+
+screen.challengesOverview list challenge.choosen{
+	opacity: 0.5;
+}
+
+screen.challengesOverview list challenge *{
+	position: absolute;
+	display: block;
+}
+
+screen.challengesOverview list challenge from{
+	margin:90px 0 0 40px;
+	font-size: 28px;
+	text-transform: none;
+	width: 180px;
+	height:100px;
+	text-align: center;
+	line-height: 90%
+}
+
+screen.challengesOverview list challenge to{
+	margin:90px 0 0 370px;
+	font-size: 28px;
+	text-transform: none;
+	width: 180px;
+	height:100px;
+	text-align: center;
+	line-height: 90%
+}
+
+screen.challengesOverview list challenge scorefrom{
+	position: absolute;
+	margin: 10px 0 0 220px;
+	font-size: 22px;
+	width: 50px;
+	text-align: center;
+}
+
+screen.challengesOverview list challenge scoreto{
+	position: absolute;
+	margin: 30px 0 0 319px;
+	font-size: 22px;
+	width: 50px;
+	text-align: center;
+}
+
+screen.challengesOverview list challenge levelname{
+	margin: 130px 0 0 220px;
+	width: 140px;
+	text-align: center;
+	font-size: 17px;
+	text-transform: uppercase;
+	line-height: 100%;
+}
+
+screen.challengesOverview btn.back{
+	margin: 840px 0 0 30px;
+	
+}
+
+
+
+
+
+
+
+/* CHALLENGE DONE ################################################################################################################################*/
+screen.challengeDone{
+    background:url(../graphic/screens/challenges2/done-background.png) no-repeat;
+    text-transform:none;
+}
+
+screen.challengeDone header{
+    margin: 59px 0 0 91px;
+    width: 600px;
+    height: 58px;
+    text-align: center;
+    background:url(../graphic/screens/challenges2/header-lost.png) no-repeat;
+}
+
+screen.challengeDone header.winner{
+    background:url(../graphic/screens/challenges2/header-won.png) no-repeat;
+}
+
+screen.challengeDone header.draw{
+    background:url(../graphic/screens/challenges2/header-draw.png) no-repeat;
+    margin-left:81px;
+}
+
+screen.challengeDone levelname{
+    margin: 127px 0 0 192px;
+    width: 256px;
+    text-align: center;
+    font-size: 32px;
+}
+
+screen.challengeDone user{
+    font-family:Margarine-Regular;
+    margin-top:201px;
+}
+
+screen.challengeDone user.you{
+    margin-left:310px;
+}
+
+screen.challengeDone user.him{
+}
+
+screen.challengeDone steps{
+    margin:0 0 0 100px;
+    width:100px;
+    text-align:center;
+    font-size:50px;
+    line-height:77%;
+}
+
+screen.challengeDone steps:after{
+    content:"steps";
+    font-size:30px;
+    display:block;
+}
+
+screen.challengeDone steps{
+    margin:0 0 0 100px;
+    width:100px;
+    text-align:center;
+    font-size:50px;
+    line-height:77%;
+}
+
+screen.challengeDone poonie{
+    background:url(../graphic/screens/challenges2/poonie-looser.png) no-repeat;
+    margin:127px 0 0 83px;
+    width: 159px;
+    height: 137px;
+}
+
+screen.challengeDone .winner poonie{
+    background:url(../graphic/screens/challenges2/poonie-winner.png) no-repeat;
+    margin:62px 0 0 83px;
+    width: 159px;
+    height: 192px;
+}
+
+screen.challengeDone name{
+    margin:262px 0 0 18px;
+    width: 283px;
+    height:56px;
+    text-align:center;
+    font-size:43px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+
+screen.challengeDone btn.again{
+    margin: 570px 0 0 56px;
+    width: 435px;
+    font-size: 68px;
+}
+
+screen.challengeDone btn.challenges{
+    margin: 706px 0 0 56px;
+    width: 435px;
+    font-size: 47px;
+}
+
+screen.challengeDone btn.back{
+    margin: 818px 0 0 56px;
+    width: 435px;
+    font-size: 47px;
+}
+
+
+
+
+/* CHALLENGE DONE ################################################################################################################################*/
+screen.challenge-done{
+	color: #000
+}
+
+screen.challenge-done.winner{
+	background: url(../graphic/screens/challenges/screen-winner.png) no-repeat blue;
+}
+
+screen.challenge-done.draw{
+	background: url(../graphic/screens/challenges/screen-draw.png) no-repeat yellow;
+}
+
+screen.challenge-done.looser{
+	background: url(../graphic/screens/challenges/screen-looser.png) no-repeat red;
+}
+
+screen.challenge-done btn{
+	font-size: 35px;
+	color: white
+}
+
+screen.challenge-done btn.again{
+	margin: 655px 0 0 177px;
+}
+
+screen.challenge-done btn.challenges{
+	margin: 744px 0 0 117px;
+}
+
+screen.challenge-done btn.back{
+	margin: 838px 0 0 170px;
+}
+
+screen.challenge-done toname{
+	margin:540px 0 0 400px;
+	font-size: 28px;
+	text-transform: none;
+	width: 180px;
+	height:100px;
+	text-align: center;
+	line-height: 90%;
+}
+
+screen.challenge-done fromname{
+	margin:540px 0 0 60px;
+	font-size: 28px;
+	text-transform: none;
+	width: 180px;
+	height:100px;
+	text-align: center;
+	line-height: 90%;
+}
+
+screen.challenge-done levelname{
+	margin: 570px 0 0 255px;
+	width: 140px;
+	text-align: center;
+	font-size: 17px;
+	text-transform: uppercase;
+	line-height: 100%;
+}
+
+screen.challenge-done fromscore{
+	position: absolute;
+	margin: 456px 0 0 260px;
+	font-size: 22px;
+	width: 50px;
+	text-align: center;
+	color: white
+}
+
+screen.challenge-done toscore{
+	position: absolute;
+	margin: 474px 0 0 360px;
+	font-size: 22px;
+	width: 50px;
+	text-align: center;
+	color: white
+}
+
+
+
+
+
+/* CREDITS ################################################################################################################################*/
+
+screen.credits {
+	background: #000;
+}
+
+screen.credits overlay{
+	position: absolute;
+	margin: 0px;
+	left: 0px;
+	top: 0px;
+	width: 640px;
+	height: 960px;
+	background:url(../graphic/screens/credits/screen.png);
+	z-index: 2;
+}
+
+
+
+screen.credits swirl{
+	background-image: url(../graphic/screens/universal/spin.png);
+	width: 1132px;
+	height: 1104px;
+	margin: -304px 0 0 -247px;
+	-webkit-animation: levelClearSpin 20.0s linear infinite;
+	z-index: 1
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

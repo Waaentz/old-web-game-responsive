@@ -1,0 +1,466 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"animation",
+				"animationStill"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"logged",
+				"isLoggedIn"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"challenge",
+				"challenge"
+			],
+			[
+				"ta",
+				"table"
+			],
+			[
+				"winner",
+				"winnerRedElm"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"challen",
+				"challengeId"
+			],
+			[
+				"get",
+				"getAll"
+			],
+			[
+				"is",
+				"isComplete"
+			],
+			[
+				"has",
+				"hasMoved"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"on",
+				"onclick"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"table",
+				"table-cell"
+			],
+			[
+				"cha",
+				"challenges"
+			],
+			[
+				"userTrail",
+				"userTrailString"
+			],
+			[
+				"high",
+				"highscoreId"
+			],
+			[
+				"user",
+				"userTrail"
+			],
+			[
+				"da",
+				"dateCompleted"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"onmo",
+				"ontouchmove"
+			],
+			[
+				"scree",
+				"screenElm"
+			],
+			[
+				"onmouse",
+				"onmouseup"
+			],
+			[
+				"facebook",
+				"facebookLogin"
+			],
+			[
+				"choosen",
+				"choosenUser"
+			],
+			[
+				"remove",
+				"removeThis"
+			],
+			[
+				"HTTP",
+				"http_request"
+			],
+			[
+				"form",
+				"formElm"
+			],
+			[
+				"fade",
+				"fadeIn"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"water",
+				"waterItems"
+			],
+			[
+				"if",
+				"ife	if … else"
+			],
+			[
+				"i",
+				"ife	if … else"
+			],
+			[
+				"tes",
+				"testObj"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"sy",
+				"Set Syntax: PHP"
+			],
+			[
+				"",
+				":$ - EOF"
+			],
+			[
+				"insla",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/tracker.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/screen.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/facebook.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/game.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/map.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/unit.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/index.html",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/base.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/css/screens.css",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/css/map/default.css",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/audio.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/init.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/levels.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/auth.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/graph_api.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/css/style.css",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/jquery.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/jsontest.html",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/graphic/screens/challenges/challenge-item-draw.png",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/flow.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/date.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/box.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/editor.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/touch.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/item.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/helpers.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/inc/level.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/test.html",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js/_config.js",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/analyse.php",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/fbplugin.html",
+		"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/facebookplugin.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/",
+			"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/",
+			"/Users/waaentz/Graphical funplace/poocollector/poocollector app/pooCollector/www/js virker",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"move",
+			"disabled",
+			"gameMenu",
+			"screenCredits",
+			"credit",
+			"levels",
+			"cleared",
+			"king of",
+			"king",
+			"menu",
+			"infi",
+			"levels",
+			"showTutorialOnStart",
+			"continu",
+			"tutor",
+			"localhost",
+			"imgholder",
+			"image",
+			"imgholder",
+			"red",
+			"e62d20",
+			" 3px",
+			"3px",
+			"red",
+			"audio",
+			"sudio",
+			".build",
+			"audio.build",
+			"gameplay",
+			"nogo",
+			"width",
+			"unit",
+			"unit.user",
+			"animateJumpright",
+			"nogo",
+			"challengesOverview",
+			"tutorial",
+			"#",
+			"menuItems",
+			"menu",
+			"challenges",
+			"connected",
+			"not_permissioned",
+			"s name and picture",
+			"Cordova Facebook Connect plugin",
+			"Got the user",
+			"Got the user's name and picture:",
+			"clearLevel",
+			"addHighscore",
+			"challenges",
+			"challenge",
+			"highscores.add",
+			"challenges.add",
+			"map editor",
+			"edi",
+			"function playGame",
+			"playGame",
+			"levelisclea",
+			"best score",
+			"challenges.add",
+			"challenge.add",
+			"challenge",
+			"scrollable",
+			"continue",
+			"newHighscoreItem",
+			"highscore",
+			"hiscore",
+			"If facebook response is positive, then add challenge to database",
+			"CHALLENGE",
+			"challenge",
+			"log",
+			"facebook",
+			"promptLogin",
+			"facebook",
+			"friends",
+			"200",
+			"friendsInfo",
+			"to",
+			"token",
+			"friends",
+			"test",
+			"alert",
+			"promptLogin",
+			"editor",
+			"test",
+			"onclear"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.412039557745,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"test",
+				"var test = \"tessst\";"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 300.0,
+	"status_bar_visible": true
+}

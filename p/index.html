@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon-precomposed" href="graphic/poocollector/app-icon2.png"/>
+	
+	<meta property="fb:admins" content="20901205" />
+	
+	<title>PooCollector</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+	<script>
+(function(){
+	var GAME_BASE_WIDTH = 640;
+	var GAME_BASE_HEIGHT = 960;
+
+	var readViewport = function() {
+		var vv = window.visualViewport;
+		var vw = Math.max(vv && vv.width ? vv.width : 0, document.documentElement.clientWidth || 0, window.innerWidth || 0);
+		var vh = Math.max(vv && vv.height ? vv.height : 0, document.documentElement.clientHeight || 0, window.innerHeight || 0);
+		return {width: vw, height: vh};
+	};
+
+	var fitLoadingViewport = function(){
+		var viewport = readViewport();
+		var vw = viewport.width;
+		var vh = viewport.height;
+		if (!vw || !vh) {
+			vw = GAME_BASE_WIDTH;
+			vh = GAME_BASE_HEIGHT;
+		}
+
+		var scaleX = vw / GAME_BASE_WIDTH;
+		var scaleY = vh / GAME_BASE_HEIGHT;
+		var scale = Math.min(scaleX, scaleY);
+		var viewportRatio = vw / Math.max(vh, 1);
+		var designRatio = GAME_BASE_WIDTH / GAME_BASE_HEIGHT;
+		var isExtremeAspect = (viewportRatio >= designRatio * 2.4) || (viewportRatio <= designRatio / 2.4);
+
+		if (!isFinite(scale) || scale <= 0) {
+			scale = 1;
+		}
+
+		// Extreme viewport shape fallback: keep contain scaling and readable minimum.
+		if (isExtremeAspect) {
+			var minReadableScale = Math.max(scale * 0.75, 0.2);
+			scale = Math.max(scale, minReadableScale);
+			scale = Math.min(scale, Math.min(scaleX, scaleY));
+		}
+
+		var offsetX = Math.max(0, (vw - (GAME_BASE_WIDTH * scale)) / 2);
+		var offsetY = Math.max(0, (vh - (GAME_BASE_HEIGHT * scale)) / 2);
+		var rootStyle = document.documentElement.style;
+		rootStyle.setProperty("--game-base-width", GAME_BASE_WIDTH + "px");
+		rootStyle.setProperty("--game-base-height", GAME_BASE_HEIGHT + "px");
+		rootStyle.setProperty("--map-scale", String(scale));
+		rootStyle.setProperty("--map-left", offsetX + "px");
+		rootStyle.setProperty("--map-top", offsetY + "px");
+		rootStyle.setProperty("--screen-scale", String(scale));
+		rootStyle.setProperty("--screen-left", offsetX + "px");
+		rootStyle.setProperty("--screen-top", offsetY + "px");
+		rootStyle.setProperty("--overlay-scale", String(scale));
+		rootStyle.setProperty("--overlay-left", offsetX + "px");
+		rootStyle.setProperty("--overlay-top", offsetY + "px");
+		rootStyle.setProperty("--intro-scale", String(scale));
+		rootStyle.setProperty("--intro-left", offsetX + "px");
+		rootStyle.setProperty("--intro-top", offsetY + "px");
+		rootStyle.setProperty("--trans-scale", String(scale));
+		rootStyle.setProperty("--trans-left", offsetX + "px");
+		rootStyle.setProperty("--trans-top", offsetY + "px");
+		rootStyle.setProperty("--onscreen-scale", String(scale));
+		rootStyle.setProperty("--onscreen-left", offsetX + "px");
+		rootStyle.setProperty("--onscreen-top", offsetY + "px");
+
+		var body = document.body || document.getElementsByTagName("body")[0];
+		if (body && body.style) {
+			body.style.backgroundPosition = offsetX + "px " + offsetY + "px";
+			body.style.backgroundSize = (GAME_BASE_WIDTH * scale) + "px " + (GAME_BASE_HEIGHT * scale) + "px";
+		}
+	};
+
+	var onViewportUpdate = function(){
+		fitLoadingViewport();
+	};
+
+	onViewportUpdate();
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", onViewportUpdate);
+	} else {
+		onViewportUpdate();
+	}
+	window.addEventListener("load", onViewportUpdate);
+	window.addEventListener("resize", onViewportUpdate);
+	window.addEventListener("orientationchange", onViewportUpdate);
+})();
+</script>
+
+	
+</head>
+<body onload="onBodyLoad()">
+
+	<div id="fb-root"></div>
+
+	<div id="action">
+		<div id="loading-icon"></div>
+		<div id="msg"></div>
+	</div>
+
+	<script type="text/javascript" src="js/base.js"></script>
+
+	<script src="cordova-1.9.0.js"></script>
+	<script src="cdv-plugin-fb-connect.js"></script>
+	<script src="facebook_js_sdk.js"></script>
+
+
+	<script src="js/ui.js"></script>
+	<script src="js/auth.js"></script>
+	<script src="js/feed.js"></script>
+	<script src="js/graph_api.js"></script>
+	<script src="js/requests.js"></script>
+
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  if (typeof Cordova === 'undefined' || typeof cordova === 'undefined') {
+      if (window.console) console.warn('Cordova variable not found; running in web mode.');
+  }
+  if (typeof CDV === 'undefined') {
+      if (window.console) console.warn('CDV variable not found; Facebook native bridge may be unavailable.');
+  }
+  if (typeof FB === 'undefined') {
+      if (window.console) console.warn('FB variable not found; Facebook login/features will be disabled.');
+  }
+
+  document.addEventListener('deviceready', function() {
+      try {
+          if (typeof FB !== 'undefined' && typeof CDV !== 'undefined' && CDV && CDV.FB) {
+              FB.init({ appId: "525389767474461", nativeInterface: CDV.FB, useCachedDialogs: false });
+          }
+      } catch (e) {
+          console.error(e);
+      }
+  }, false);
+
+</script>
+
+	
+	
+	
+	
+</body>
+</html>

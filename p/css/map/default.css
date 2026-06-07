@@ -1,0 +1,608 @@
+
+map{
+	background: url(../../graphic/grass-base.png);
+}
+
+
+fields,
+fielditems,
+items,
+boxes,
+units{
+	position: absolute;
+}
+
+fields{
+	z-index: 1;
+}
+
+fielditems{
+	
+}
+
+items{
+
+}
+
+boxes{
+
+}
+
+units{
+
+}
+
+
+map row{
+	display: block;
+	overflow: hidden;
+}
+
+
+map row field
+{
+	display: block;
+	float: left;
+	color: #333;
+	font-size: 10px;
+}
+
+
+
+map * > *{
+	position: absolute;
+}
+
+map inner{
+	height: 120px;
+	width: 120px;
+	position: absolute;
+	margin: -22px;
+	background: no-repeat;
+}
+
+
+
+
+
+/*
+
+fielditem.clear inside{
+	background: url(../../graphic/flagpole.png) no-repeat;
+	height: 102px;
+	width: 26px;
+	position: absolute;
+	margin: -31px 0 0 68px;
+	z-index: 99999;
+	
+	-webkit-animation: flagpole 0.3s;
+}
+
+
+fielditem.clear inside grf{
+	background: url(../../graphic/theflag.png) no-repeat;
+	height: 20px;
+	width: 30px;
+	position: absolute;
+	margin: 2px 0 0 -6px;
+	
+	-webkit-animation: flag 1.0s;
+}
+
+
+fielditem.unclear inside{
+	background: url(../../graphic/flagpole.png) no-repeat;
+	width: 26px;
+	position: absolute;
+	margin-left: 68px;
+	-webkit-animation: unflagpole 0.3s;
+}
+
+fielditem.unclear inside grf{
+	background: url(../../graphic/theflag.png) no-repeat;
+	width: 30px;
+	position: absolute;
+	margin: 2px 0 0 -6px;
+	
+	-webkit-animation: unflag 1.0s;
+}*/
+
+
+item.stone-1 inner{
+	background-image: url(../../graphic/map-items/stone-1.png);
+	margin: -26px 0 0 -10px;
+}
+
+item.stone-2 inner{
+	background-image: url(../../graphic/map-items/stone-2.png);
+	margin: 1px 0 0 -2px;
+}
+
+item.stone-3 inner{
+	background-image: url(../../graphic/map-items/stone-3.png);
+	margin: -23px 0 0 -5px;
+}
+
+item.stone-4 inner{
+	background-image: url(../../graphic/map-items/stone-4.png);
+	margin: -2px 0 0 -8px;
+}
+
+item.stone-5 inner{
+	background-image: url(../../graphic/map-items/stone-5.png);
+	margin: 0px 0 0 1px;
+}
+
+item.stone-6 inner{
+	background-image: url(../../graphic/map-items/stone-6.png);
+	margin: 9px 0 0 4px;
+}
+
+item.stone-7 inner{
+	background-image: url(../../graphic/map-items/stone-7.png);
+	margin: 1px 0 0 -3px;
+}
+
+item.stone-8 inner{
+	background-image: url(../../graphic/map-items/stone-8.png);
+	margin: -4px 0 0 1px;
+}
+
+item.stone-9 inner{
+	background-image: url(../../graphic/map-items/stone-9.png);
+	margin: -27px 0 0 7px;
+}
+
+item.stone-10 inner{
+	background-image: url(../../graphic/map-items/stone-10.png);
+	margin: -17px 0 0 4px;
+}
+
+item.stone-11 inner{
+	background-image: url(../../graphic/map-items/stone-11.png);
+	margin: -7px 0 0 -3px;
+}
+
+item.stone-12 inner{
+	background-image: url(../../graphic/map-items/stone-12.png);
+	margin: 6px 0 0 4px;
+}
+
+item.stone-13 inner{
+	background-image: url(../../graphic/map-items/stone-13.png);
+	margin: -18px 0 0 -4px;
+}
+
+item.stone-14 inner{
+	background-image: url(../../graphic/map-items/stone-14.png);
+	margin: -5px 0 0 3px;
+}
+item.stone-15 inner{
+	background-image: url(../../graphic/map-items/stone-15.png);
+	margin: 1px 0 0 5px;
+}
+
+
+
+item.tree-1 inner{
+	background-image: url(../../graphic/map-items/tree-1.png);
+	margin: -62px 0 0 5px;
+}
+
+item.tree-2 inner{
+	background-image: url(../../graphic/map-items/tree-2.png);
+	margin:-62px 0 0 5px;
+}
+
+item.tree-3 inner{
+	background-image: url(../../graphic/map-items/tree-3.png);
+	margin: -62px 0 0 5px;
+}
+
+item.tree-4 inner{
+	background-image: url(../../graphic/map-items/tree-4.png);
+	margin:-69px 0 0 13px;
+}
+
+item.tree-5 inner{
+	background-image: url(../../graphic/map-items/tree-5.png);
+	margin: -38px 0 0 13px;
+}
+
+item.tree-6 inner{
+	background-image: url(../../graphic/map-items/tree-6.png);
+	margin: -19px 0 0 13px;
+}
+
+item.tree-7 inner{
+	background-image: url(../../graphic/map-items/tree-7.png);
+	margin: -5px 0 0 13px;
+}
+
+item.tree-8 inner{
+	background-image: url(../../graphic/map-items/tree-8.png);
+	margin: -70px 0 0 2px;
+}
+
+item.tree-9 inner{
+	background-image: url(../../graphic/map-items/tree-9.png);
+	margin:-69px 0 0 2px;
+}
+
+item.tree-10 inner{
+	background-image: url(../../graphic/map-items/tree-10.png);
+	margin: -63px 0 0 3px;
+}
+
+
+item.tree-chunks-1 inner{
+	background-image: url(../../graphic/map-items/tree-chunks-1.png);
+	margin: 3px 0 0 3px;
+}
+
+item.tree-chunks-2 inner{
+	background-image: url(../../graphic/map-items/tree-chunks-2.png);
+	margin: 3px 0 0 3px;
+}
+
+item.tree-chunks-3 inner{
+	background-image: url(../../graphic/map-items/tree-chunks-3.png);
+	margin: 3px 0 0 3px;
+}
+
+item.tree-chunks-4 inner{
+	background-image: url(../../graphic/map-items/tree-chunks-4.png);
+	margin: 3px 0 0 3px;
+}
+
+
+item.mushroom-1 inner{
+	background-image: url(../../graphic/map-items/mushroom-1.png);
+	margin: 3px 0 0 3px;
+}
+
+item.mushroom-2 inner{
+	background-image: url(../../graphic/map-items/mushroom-2.png);
+	margin: 3px 0 0 3px;
+}
+
+item.mushroom-3 inner{
+	background-image: url(../../graphic/map-items/mushroom-3.png);
+	margin: 3px 0 0 3px;
+}
+
+item.mushroom-4 inner{
+	background-image: url(../../graphic/map-items/mushroom-4.png);
+	margin: 3px 0 0 3px;
+}
+
+item.mushroom-4 inner{
+	background-image: url(../../graphic/map-items/mushroom-4.png);
+	margin: 3px 0 0 3px;
+}
+
+item.water-1{
+	width: 64px;
+	height: 64px;
+	background: #0292b6;
+}
+
+item.water-1.fullSea{
+	width: 64px;
+	height: 64px;
+	background: #0292b6;
+}
+
+item.water-1.tm tm{
+	width: 64px;
+	height: 64px;
+	background: url(../../graphic/map-items/water/tm.png) no-repeat;
+	margin-top: -4px;
+}
+
+item.water-1.tr tr{
+	width: 16px;
+	height: 40px;
+	background: url(../../graphic/map-items/water/tr.png) no-repeat;
+	margin-left: 48px;
+    margin-top: -16px;
+    z-index: 1;
+}
+
+item.water-1.tl tl{
+	width: 16px;
+	height: 40px;
+	background: url(../../graphic/map-items/water/tl.png) no-repeat;
+	margin-left: 0px;
+    margin-top: -16px;
+    z-index: 1;
+}
+
+item.water-1.br bbr{
+	width: 16px;
+	height: 40px;
+	background: url(../../graphic/map-items/water/br.png) no-repeat;
+	margin-left: 64px;
+    margin-top: 63px;
+    z-index: 1;
+}
+
+item.water-1.bl bl{
+	width: 16px;
+	height: 40px;
+	background: url(../../graphic/map-items/water/bl.png) no-repeat;
+	margin-left: 49px;
+    margin-top: 63px;
+    z-index: 1;
+}
+
+item.water-1.bl-corner bbr{
+	width: 16px;
+	height: 40px;
+	background: url(../../graphic/map-items/water/br.png) no-repeat;
+	margin-left: 0px;
+    margin-top: 63px;
+    z-index: 1;
+}
+
+item.water-1 inner{
+	width: 1px;
+	height:1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+map .tobeDeleted{
+	display: none;
+}
+
+
+
+
+
+box.poo-1 inner{
+	background-image: url(../../graphic/map-items/poo-1.png);
+	margin: 3px 0 0 1px;
+}
+
+fielditem.goal-1 inner{
+	background-image: url(../../graphic/map-items/goal-1.png);
+	margin: -1px 0 0 -6px;
+}
+
+
+fielditem.clear flagholder{
+	background: url(../../graphic/map-items/flagpoleholder.png) no-repeat;
+	width: 15px;
+	height: 12px;
+	margin: -1px 0 0 -6px;
+	display: block;
+	position: absolute;
+}
+
+fielditem.clear flagpole{
+	background: url(../../graphic/map-items/flagpole.png) no-repeat;
+	width: 9px;
+	height: 45px;
+	margin: -39px 0 0 -3px;
+	display: block;
+	position: absolute;
+}
+
+fielditem.clear flag{
+	background: url(../../graphic/map-items/flag.png) no-repeat;
+	width: 29px;
+	height: 17px;
+	margin: -38px 0 0 2px;
+	display: block;
+	position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*STAND STILL*/
+unit.user inner{
+	display: block !important;
+	width: 130px;
+	height: 170px;
+	margin: -36px 0 0 -28px;
+	background: url(../../graphic/map-items/animation-sprite.png) no-repeat;
+	background-position:0 0;
+	z-index: 30;
+}
+
+.old unit.user inner{
+	background-image: url(../../graphic/map-items/animation-still.png) !important;
+}
+
+/*LOOK DOWN*/
+unit.user inner{
+	background-position:0 0;
+}
+
+/*LOOK UP*/
+unit.user.up inner{
+	background-position:0px -170px;
+}
+
+/*LOOK RIGHT*/
+unit.user.right inner{
+	background-position:0px -340px;
+}
+
+/*LOOK LEFT*/
+unit.user.left inner{
+	background-position:0px -510px;
+}
+
+
+
+/*JUMP DOWN*/
+unit.user.inTransition boodyholder{
+	display: none;
+}
+
+unit.user.inTransition.down inner{
+	margin: -36px 0 0 -28px;
+}
+
+unit.user.inTransition.up inner{
+	margin: -98px 0 0 -28px;
+}
+
+unit.user.inTransition.right inner{
+	margin: -36px 0 0 -7px;
+	width: 144px;
+	height: 100px;
+}
+
+unit.user.inTransition.left inner{
+	margin: -36px 0 0 -67px;
+	width: 144px;
+	height: 100px;
+}
+
+
+unit.user.inTransition.nogo inner{
+	margin: -36px 0 0 -67px;
+	width: 144px;
+	height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+game box{
+	-webkit-transition: margin 0.3s ease-out;
+	-moz-transition: margin 0.3s ease-out;
+}
+
+.old game box{
+	-webkit-transition: none;
+}
+
+.old game unit{
+	-webkit-transition: none;
+}
+
+
+
+
+
+
+
+editor mark:before{
+	background: rgba(255, 255, 255, .75);
+	border-radius: 10px;
+    content: "";
+    height: 56px;
+    margin: -16px 0 0 -16px;
+    border: 17px solid white;
+    position: absolute;
+    width: 63px;
+}
+
+
+editor mark.isDelete:before{
+	background-color: #c40000;
+	border-color: #720000;
+}
+
+
+
+
+
+
+
+
+editor objectsmenu{
+	background: url(../../graphic/objectsmenu.png) no-repeat;
+	position: absolute;
+	z-index: 99999;
+	width: 200px;
+	height: 194px;
+	top: 0;
+	left: 0;
+	margin: -123px 0 0 -22px;
+	overflow: hidden;
+}
+
+
+editor objectsmenu holder{
+	width: 90px;
+	height: 90px;
+	overflow: hidden;
+	display: block;
+	margin: 10px 14px 12px 11px;
+}
+
+editor objectsmenu holder inner{
+	width: 1000px;
+	display: block;
+	-webkit-transition: margin 0.1s ease-in;
+}
+
+editor objectsmenu objectlist{
+	width: 90px;
+	padding-bottom: 20px;
+	display: block;
+	float: left;
+	
+	-webkit-transition: margin 0.2s ease-in;
+}
+
+editor objectsmenu objectlist type{
+	width: 90px;
+	height: 90px;
+	display: block;
+	margin-bottom: 2px;
+	background: no-repeat;
+	background-size: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
