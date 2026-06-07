@@ -16,43 +16,46 @@
 (function(){
 	var GAME_BASE_WIDTH = 640;
 	var GAME_BASE_HEIGHT = 960;
+	var DUMMY_BG_URL = "../graphic/screens/loading/background.png";
 
 	var readViewport = function() {
 		var vv = window.visualViewport;
-		var vw = Math.max(vv && vv.width ? vv.width : 0, document.documentElement.clientWidth || 0, window.innerWidth || 0);
-		var vh = Math.max(vv && vv.height ? vv.height : 0, document.documentElement.clientHeight || 0, window.innerHeight || 0);
-		return {width: vw, height: vh};
+		return {
+			width: Math.max(vv && vv.width ? vv.width : 0, document.documentElement.clientWidth || 0, window.innerWidth || 0),
+			height: Math.max(vv && vv.height ? vv.height : 0, document.documentElement.clientHeight || 0, window.innerHeight || 0)
+		};
 	};
 
 	var fitLoadingViewport = function(){
 		var viewport = readViewport();
-		var vw = viewport.width;
-		var vh = viewport.height;
-		if (!vw || !vh) {
-			vw = GAME_BASE_WIDTH;
-			vh = GAME_BASE_HEIGHT;
-		}
+		var vw = viewport.width || GAME_BASE_WIDTH;
+		var vh = viewport.height || GAME_BASE_HEIGHT;
 
 		var scaleX = vw / GAME_BASE_WIDTH;
 		var scaleY = vh / GAME_BASE_HEIGHT;
 		var scale = Math.min(scaleX, scaleY);
+		var fillScale = Math.max(scaleX, scaleY);
 		var viewportRatio = vw / Math.max(vh, 1);
 		var designRatio = GAME_BASE_WIDTH / GAME_BASE_HEIGHT;
 		var isExtremeAspect = (viewportRatio >= designRatio * 2.4) || (viewportRatio <= designRatio / 2.4);
 
 		if (!isFinite(scale) || scale <= 0) {
 			scale = 1;
+			fillScale = 1;
 		}
 
-		// Extreme viewport shape fallback: keep contain scaling and readable minimum.
+		// Extreme viewport fallback keeps gameplay scale safe (no clipping) and uses a filled dummy background for margins.
 		if (isExtremeAspect) {
-			var minReadableScale = Math.max(scale * 0.75, 0.2);
-			scale = Math.max(scale, minReadableScale);
 			scale = Math.min(scale, Math.min(scaleX, scaleY));
+			fillScale = Math.max(fillScale, 1);
 		}
 
-		var offsetX = Math.max(0, (vw - (GAME_BASE_WIDTH * scale)) / 2);
-		var offsetY = Math.max(0, (vh - (GAME_BASE_HEIGHT * scale)) / 2);
+		var mapWidth = GAME_BASE_WIDTH * scale;
+		var mapHeight = GAME_BASE_HEIGHT * scale;
+		var bgWidth = GAME_BASE_WIDTH * fillScale;
+		var bgHeight = GAME_BASE_HEIGHT * fillScale;
+		var offsetX = Math.max(0, (vw - mapWidth) / 2);
+		var offsetY = Math.max(0, (vh - mapHeight) / 2);
 		var rootStyle = document.documentElement.style;
 		rootStyle.setProperty("--game-base-width", GAME_BASE_WIDTH + "px");
 		rootStyle.setProperty("--game-base-height", GAME_BASE_HEIGHT + "px");
@@ -74,11 +77,26 @@
 		rootStyle.setProperty("--onscreen-scale", String(scale));
 		rootStyle.setProperty("--onscreen-left", offsetX + "px");
 		rootStyle.setProperty("--onscreen-top", offsetY + "px");
+		rootStyle.setProperty("--game-extreme-viewport", isExtremeAspect ? "1" : "0");
+		rootStyle.setProperty("--game-fill-scale", String(fillScale));
+		rootStyle.setProperty("--game-fill-width", bgWidth + "px");
+		rootStyle.setProperty("--game-fill-height", bgHeight + "px");
 
 		var body = document.body || document.getElementsByTagName("body")[0];
 		if (body && body.style) {
-			body.style.backgroundPosition = offsetX + "px " + offsetY + "px";
-			body.style.backgroundSize = (GAME_BASE_WIDTH * scale) + "px " + (GAME_BASE_HEIGHT * scale) + "px";
+			body.style.backgroundImage = "url(" + DUMMY_BG_URL + ")";
+			body.style.backgroundRepeat = "repeat";
+			body.style.backgroundPosition = "center center";
+			body.style.backgroundSize = bgWidth + "px " + bgHeight + "px";
+		}
+
+		// Keep a safe fallback marker for extreme layouts.
+		if (body) {
+			if (isExtremeAspect) {
+				body.classList.add("extreme-aspect");
+			} else {
+				body.classList.remove("extreme-aspect");
+			}
 		}
 	};
 

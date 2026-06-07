@@ -106,10 +106,22 @@ var applyIntroViewport = function(){
 };
 
 var applyBodyViewport = function(){
+	var fillScale = mapViewport.fillScale || mapViewport.scale || 1;
+	var bgWidth = mobile.screen.width * fillScale;
+	var bgHeight = mobile.screen.height * fillScale;
 	var bgStyle = {
-		backgroundPosition: mapViewport.left + "px " + mapViewport.top + "px",
-		backgroundSize: (mobile.screen.width * mapViewport.scale) + "px " + (mobile.screen.height * mapViewport.scale) + "px"
+		backgroundImage: "url(../graphic/screens/loading/background.png)",
+		backgroundRepeat: "repeat",
+		backgroundPosition: "center center",
+		backgroundSize: bgWidth + "px " + bgHeight + "px"
 	};
+
+
+	if (mapViewport.isExtreme) {
+		$("body").addClass("extreme-aspect");
+	} else {
+		$("body").removeClass("extreme-aspect");
+	}
 
 	$("body").css(bgStyle);
 };
@@ -163,22 +175,21 @@ var fitMapViewport = function(){
 	var scaleX = vw / baseW;
 	var scaleY = vh / baseH;
 	var scale = Math.min(scaleX, scaleY);
+	var fillScale = Math.max(scaleX, scaleY);
 	var viewportRatio = vw / Math.max(vh, 1);
 	var designRatio = baseW / baseH;
 	var isExtremeAspect = (viewportRatio >= designRatio * 2.4) || (viewportRatio <= designRatio / 2.4);
 
 	if (!isFinite(scale) || scale <= 0) {
 		scale = 1;
+		fillScale = 1;
 	}
 
-	// Extreme viewport shape fallback: keep contain scaling and readable minimum.
 	if (isExtremeAspect) {
-		var minReadableScale = Math.max(scale * 0.75, 0.2);
-		scale = Math.max(scale, minReadableScale);
+		// No clipping fallback for tiny/long layouts:
+		// keep contain scale for gameplay, but still use a larger fill image scale for empty space.
 		scale = Math.min(scale, Math.min(scaleX, scaleY));
-		window.__gameExtremeLayout = true;
-	} else {
-		window.__gameExtremeLayout = false;
+		fillScale = Math.max(fillScale, 1);
 	}
 
 	$("html").css("--game-base-width", baseW + "px");
@@ -190,7 +201,11 @@ var fitMapViewport = function(){
 	mapViewport = {
 		scale: scale,
 		left: offsetX,
-		top: offsetY
+		top: offsetY,
+		vw: vw,
+		vh: vh,
+		isExtreme: isExtremeAspect,
+		fillScale: fillScale
 	};
 	screenViewport = {
 		scale: scale,
@@ -236,6 +251,10 @@ var fitMapViewport = function(){
 	$("html").css("--onscreen-scale", scale);
 	$("html").css("--onscreen-left", offsetX + "px");
 	$("html").css("--onscreen-top", offsetY + "px");
+	$("html").css("--game-extreme-viewport", isExtremeAspect ? "1" : "0");
+	$("html").css("--game-fill-scale", fillScale);
+	$("html").css("--game-fill-width", (baseW * fillScale) + "px");
+	$("html").css("--game-fill-height", (baseH * fillScale) + "px");
 
 	applyBodyViewport();
 	applyMapViewport();

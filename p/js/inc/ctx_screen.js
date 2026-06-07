@@ -98,7 +98,7 @@ var screen = {
 		var highscoresNum = highscores.getAll().length;
 		
 		logElm.html("Levels played " + levelsPlayedNum + " times and highscores added " + highscoresNum + " times");
-		logElm.css("background", "black").css("margin", "900px 0 0 0").css("height", "60px").css("fontSize", 21).css("textTransform", "none").css("width", "640").css("textAlign", "center").css("padding", "17px 0");
+		logElm.css("background", "black").css("margin", "900px 0 0 0").css("height", "60px").css("fontSize", 21).css("textTransform", "none").css("width", mobile.screen.width).css("textAlign", "center").css("padding", "17px 0");
 		
 
 		if(device.version == "6.0"){

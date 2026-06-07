@@ -92,9 +92,16 @@ var touch = {
 	
 	activateTrackTrail:function(trail){
 		
+		if(!trail.length || !trail[0] || !trail[trail.length - 1]){
+			return false;
+		}
+
+		var start = trail[0] || [0,0];
+		var end = trail[trail.length - 1] || [0,0];
+		
 		//check direction
-		var x = trail[trail.length-1][0] - trail[0][0];
-		var y = trail[trail.length-1][1] - trail[0][1];
+		var x = end[0] - start[0];
+		var y = end[1] - start[1];
 		
 		touch.isSliding = false;
 		
@@ -109,7 +116,7 @@ var touch = {
 		var downX = (touch.data.mouseDownCords && touch.data.mouseDownCords.gameX !== undefined)
 			? touch.data.mouseDownCords.gameX
 			: touch.data.mouseDownCords.pageX;
-		if(downX < 60 && ( (x>=0 && y>=0 && x>=y) || (x>=0 && y<=0 && x>=(-y)) )){
+		if(downX !== undefined && downX < 60 && ( (x>=0 && y>=0 && x>=y) || (x>=0 && y<=0 && x>=(-y)) )){
 			touch.runFuncs(touch.data.leftEdgeSlideFuncs);
 		}
 		
@@ -164,14 +171,31 @@ var touch = {
 		var scale = viewport.scale || 1;
 		var left = viewport.left || 0;
 		var top = viewport.top || 0;
+		var vw = viewport.vw || window.innerWidth || 0;
+		var vh = viewport.vh || window.innerHeight || 0;
 		var gameX = scale ? (pageX - left) / scale : pageX;
 		var gameY = scale ? (pageY - top) / scale : pageY;
-		
+		var inMap =
+			gameX >= 0 && gameX <= mobile.screen.width &&
+			gameY >= 0 && gameY <= mobile.screen.height &&
+			pageX >= (left - 20) &&
+			pageY >= (top - 20) &&
+			pageX <= (left + mobile.screen.width * scale + 20) &&
+			pageY <= (top + mobile.screen.height * scale + 20);
+
 		return {
 			pageX:pageX,
 			pageY:pageY,
-			gameX:gameX,
-			gameY:gameY,
+			gameX: inMap ? gameX : undefined,
+			gameY: inMap ? gameY : undefined,
+			inMapViewport: !!inMap,
+			currentViewport: {
+				scale: scale,
+				left: left,
+				top: top,
+				width: vw,
+				height: vh
+			},
 			target:e.target,
 			currentTarget:e.currentTarget,
 			type:e.type,
@@ -281,8 +305,10 @@ var touch = {
 					if(isDown && touch.isSliding){
 						
 						if(touch.trackTrail.length < touch.trailLimit){
-							touch.trackTrail.push([e.gameX, e.gameY]);
-						
+							if(e.gameX !== undefined && e.gameY !== undefined && isFinite(e.gameX) && isFinite(e.gameY)){
+								touch.trackTrail.push([e.gameX, e.gameY]);
+							}
+							
 						}else{
 							touch.activateTrackTrail(touch.trackTrail);
 						}

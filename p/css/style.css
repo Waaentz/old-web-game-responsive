@@ -5,6 +5,8 @@
 :root{
 	--game-base-width: 640px;
 	--game-base-height: 960px;
+	--game-fill-width: 640px;
+	--game-fill-height: 960px;
 	--map-scale: 1;
 	--map-left: 0px;
 	--map-top: 0px;
@@ -25,6 +27,7 @@
 	--onscreen-top: 0px;
 }
 
+
 filesholder{
 	display:none;
 }
@@ -38,11 +41,15 @@ body{
 	min-height: 100vh;
 	font-family: arial;
 	cursor: pointer;
-	background: #333 url(../graphic/screens/loading/background.png) no-repeat;
-	background-position: var(--map-left) var(--map-top);
-	background-size: calc(var(--game-base-width) * var(--map-scale)) calc(var(--game-base-height) * var(--map-scale));
+	background-color: #333;
+	background-image: url(../graphic/screens/loading/background.png);
+	background-repeat: repeat;
+	background-position: center center;
+	background-size: var(--game-fill-width) var(--game-fill-height);
 	overflow: hidden;
+	touch-action: none;
 }
+
 
 map{
 	transform-origin: 0 0;
@@ -92,6 +99,12 @@ map{
 	display: block;
 	overflow: hidden;
 	position: absolute;
+}
+
+map canvas{
+	width: 100%;
+	height: 100%;
+	display: block;
 }
 
 
